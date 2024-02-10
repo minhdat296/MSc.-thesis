@@ -7,6 +7,8 @@
 \newcommand{\toroidal}{\t}
 \newcommand{\extendedtoroidal}{\hat{\t}}
 \newcommand{\simpleroots}{\mathbb{I}}
+\renewcommand{\positive}{+} 
+\renewcommand{\negative}{-} 
 
 \begin{document}
 
@@ -17,7 +19,7 @@
     
     {
       \hypersetup{} 
-      %\dominitoc
+      \dominitoc
       \tableofcontents %sort sections alphabetically
     }
 
@@ -31,6 +33,8 @@
         \begin{abstract}
             
         \end{abstract}
+
+        \minitoc
     
         \input{Chapters/Background/perfect_lie_algebras}
     
@@ -42,6 +46,8 @@
         \begin{abstract}
             
         \end{abstract}
+
+        \minitoc
     
         \input{Chapters/Yangian EALAs/setup_yangian_EALAs}
 
