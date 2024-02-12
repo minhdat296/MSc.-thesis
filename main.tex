@@ -8,7 +8,9 @@
 \newcommand{\extendedtoroidal}{\hat{\t}}
 \newcommand{\simpleroots}{\mathbb{I}}
 \renewcommand{\positive}{+} 
-\renewcommand{\negative}{-} 
+\renewcommand{\negative}{-}
+\newcommand{\yangian}{\rmY}
+\newcommand{\formalyangian}{\rmY_{\hbar}}
 
 \begin{document}
 
@@ -25,6 +27,10 @@
 
     \newpage
 
+    \listoftodos
+
+    \newpage
+
     \input{Chapters/introduction}
 
     \newpage
@@ -36,9 +42,9 @@
 
         \minitoc
     
-        \input{Chapters/Background/perfect_lie_algebras}
-    
-        \input{Chapters/Background/kassel_uce_centres}
+       \input{Chapters/Background/perfect_lie_algebras}
+
+       \input{Chapters/Background/kassel_uce_centres}
 
     \newpage
 
@@ -54,8 +60,23 @@
         \input{Chapters/Yangian EALAs/yangian_div_zero_vector_fields}
 
         \input{Chapters/Yangian EALAs/root_gradings_for_yangian_EALAs}
-    
-    \addcontentsline{toc}{section}{References}
+
+    \newpage
+
+    \chapter{Classical limits of affine Yangians}
+        \begin{abstract}
+            
+        \end{abstract}
+
+        \minitoc
+
+        \input{Chapters/Classical limits of affine Yangians/affine_yangians}
+
+        \input{Chapters/Classical limits of affine Yangians/toroidal_lie_bialgebras}
+
+    \newpage
+
     \printbibliography
+    \addcontentsline{toc}{chapter}{\textbf{Bibliography}}
 
 \end{document}
