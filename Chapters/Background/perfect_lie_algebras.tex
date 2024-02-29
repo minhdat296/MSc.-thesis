@@ -55,27 +55,30 @@
             $$A := (a_{ij})_{i, j \in \simpleroots} = \left((\alpha_i, \alpha_j)_{\g}\right)_{i, j \in \simpleroots}$$
         (which is nothing but the matrix representation of the bilinear form $(-, -)_{\g}$ with respect to the basis $\{\alpha_i\}_{i \in \simpleroots}$), such that:
             $$C = DA$$
-        Furthermore, we have that $2\id - A$ is the adjacency matrix of an undirected graph without loops, called the \textbf{Dynkin diagram} of $\g$, and the \textbf{roots} of $\g$ are the roots of this Dynkin diagram. 
+        Furthermore, we have that $2\id - A$ is the adjacency matrix of an undirected graph without loops, called the \textbf{Dynkin diagram} of $\g$, and the \textbf{roots} of $\g$ are the roots of this Dynkin diagram. The set of roots shall be denoted by:
+            $$\Phi$$
 
-        
         The \textbf{root lattice} of $\g$ is given by:
             $$Q := \Z \simpleroots$$
         and in light of the root space decomoposition of $\g$, one sees that $\g$ is graded by the abelian group $Q$. Given an element:
             $$\mu := \sum_{i \in \simpleroots} m_i \alpha_i \in Q$$
         we define its \textbf{height} to be the sum of the coefficients:
             $$\height \mu := \sum_{i \in \simpleroots} m_i$$
+        $Q$ is therefore partially ordered by heights; the highest element of $\Phi$, i.e. the \textbf{highest root}, is usually denoted by:
+            $$\theta$$
+        We will be needing this distinguished element in subsection \ref{subsection: a_fixed_untwisted_affine_kac_moody_algebra}.
 
         Elements of $Q^+ := \Z_{\geq 0} \simpleroots$ are typically regarded as being \textbf{positive} (and in particular, the simple roots are positive by convention) and conversely, elements of $Q^- := \Z_{\leq 0} \simpleroots$ are typically said to be \textbf{negative}. One can subsequently construct the sets of positive/negative roots as:
             $$\Phi^{\pm} := \Phi \cap Q^{\pm}$$
         and note that $\Phi = \Phi^+ \cup \Phi^-$.
 
         From theorem \ref{theorem: root_space_decomposition_for_finite_dimensional_simple_lie_algebras}, we see that for any given positive root $\alpha \in \Phi^+$ and corresponding choices of root vectors\footnote{Choices of which are unique up to non-zero scalar multiples, since subspaces of non-zero weights are equally $1$-dimensional (see theorem \ref{theorem: root_space_decomposition_for_finite_dimensional_simple_lie_algebras}).} $x_{\pm\alpha} \in \g_{\pm\alpha}$, one has that:
-            $$(h, [x_{\alpha}, x_{-\alpha}])_{\g} = ([h, x_{\alpha}], x_{-\alpha})_{\g} = \alpha(h) (x_{\alpha}, x_{-\alpha})_{\g} = $$
+            $$(h, [x_{\alpha}, x_{-\alpha}])_{\g} = ([h, x_{\alpha}], x_{-\alpha})_{\g} = \alpha(h) (x_{\alpha}, x_{-\alpha})_{\g}$$
         for all $h \in \h$. Via the non-degeneracy of the bilinear form $(-, -)_{\g}$, this tells us that:
             $$[x_{\alpha}, x_{-\alpha}] = (x_{\alpha}, x_{-\alpha})_{\g} \check{\alpha}$$
-        where $\check{\alpha} \in \h$ corresponds uniquely to $\alpha$ via the isomorphism $\h \xrightarrow[]{\cong} \h^*$ given by $h \mapsto (h, -)_{\g}$, or in other words, $\check{\alpha} \in \h$ is such that:
-            $$(h, \check{\alpha}) = \alpha(h)$$
-        For simplicity, the root vectors $x_{\pm \alpha}$ are therefore typically chosen so that:
+        where $\check{\alpha} \in \h$ being such that\todo{Fixed phrasing.}:
+            $$(\check{\alpha}, -)_{\g} = \alpha$$
+        as elements of $\h^*$; the element $\check{\alpha}$ is often referred to as the \textbf{coroot} dual to $\alpha$, and such elements form a set $\check{\Phi}$ of coroots, in which there is a linearly independent subset $\check{\simpleroots}$ of simple coroots, etc. For simplicity, the root vectors $x_{\pm \alpha}$ are therefore typically chosen so that:
             $$(x_{\alpha}, x_{-\alpha})_{\g} = 1$$
         which then yields:
             $$[x_{\alpha}, x_{-\alpha}] = \check{\alpha}$$
@@ -83,7 +86,7 @@
             $$\sl_2(k) \to \g$$
         given by $x^{\pm} \mapsto x_{\pm \alpha}$ and $h \mapsto \check{\alpha}$ (cf. example \ref{example: sl_2}).
         
-        The next result is a fundamental theorem in the study of finite-dimensional simple Lie algebras over algebraically closed fields of characteristic $0$. It essentially asserts that to give such a Lie algebra via a presentation by generators and relations is the same as to specify its Cartan matrix. The result is not only practically useful, but also is the mean by which one approaches Kac-Moody algebras, where the Cartan matrix is no longer required to be positive-definite (cf. \cite[Chapters 1-5]{kac_infinite_dimensional_lie_algebras}). 
+        The next result is a fundamental theorem in the study of finite-dimensional simple Lie algebras over algebraically closed fields of characteristic $0$. It essentially asserts that to give such a Lie algebra via a presentation by generators and relations is the same as to specify its Cartan matrix. The result is not only practically useful, but also is the mean by which one approaches Kac-Moody algebras, where the Cartan matrix is no longer required to be positive-definite; we refer the reader to subsection \ref{subsection: a_fixed_untwisted_affine_kac_moody_algebra} for a partial recollection of this story, and to \cite[Chapters 1-8]{kac_infinite_dimensional_lie_algebras} for details. 
         \begin{theorem}[Serre's Theorem] \label{theorem: serre_theorem_for_finite_dimensional_simple_lie_algebras}
             $\g$ is isomorphic to the Lie algebra generated by the set:
                 $$\{h_i, x_i^{\pm}\}_{i \in \simpleroots}$$
@@ -200,3 +203,38 @@
         \begin{proposition}[Perfect Lie algebras admit UCEs] \label{prop: perfect_lie_algebras_admit_UCEs}
             \cite[Lemma 1.10]{garland_arithmetics_of_loop_groups} Let $k$ be a field and $\a$ is a Lie algebra over $k$. Then $\a$ admits a UCE if and only if it is perfect.
         \end{proposition}
+
+        Let us conclude this subsection by making note of the following fact about the process of extending invariant bilinear forms from Lie algebras to their central extensions.
+        \todo[inline]{Added remark about extending bilinear forms to central extensions.}
+        \begin{remark}[Extending invariant bilinear forms to central extensions] \label{remark: extending_bilinear_forms_to_central_extensions}
+            Let $k$ be a field.
+            
+            Let $\a$ be a Lie algebra over $k$ and $(-, -)$ is an invariant symmetric $k$-bilinear form thereon. Additionally, let:
+                $$0 \to \z \to \frake \to \a \to 0$$
+            be a central Lie algebra extension of $\a$ such that $\z \not \cong 0$. By proposition \ref{prop: lie_brackets_on_extensions}, we know that for all $X, Y \in \a$, we have that:
+                $$[X, Y]_{\frake} = [X, Y]_{\a} + K(X, Y)$$
+            for some $K(X, Y) \in \z$ depending on the choices of $X, Y$.
+            
+            Suppose that $\<-, -\>$ is any extension of $(-, -)$ to $\frake$, i.e. $\<-, -\>$ is a symmetric $k$-bilinear form on $\frake$ such that:
+                $$\<-, -\>|_{\Sym^2_k( \a )} = (-, -)$$
+            Assume furthermore, that:
+                $$\<\a, \z\> = 0, \<\z, \z\> = 0$$ 
+            Then, note firstly that $\<-, -\>$ is necessarily invariant: indeed, for any $X, Y, Z \in \a$, we have that:
+                $$
+                    \begin{aligned}
+                        \<[X, Y]_{\frake}, Z\> & = \< [X, Y]_{\a} + K(X, Y), Z \>
+                        \\
+                        & = ([X, Y]_{\a}, Z)
+                        \\
+                        & = (X, [Y, Z]_{\a})
+                        \\
+                        & = \< X, [Y, Z]_{\a} + K(Y, Z) \>
+                        \\
+                        & = \< X, [Y, Z]_{\frake} \>
+                    \end{aligned}
+                $$
+            Furthermore, $\<-, -\>$ must be degenerate, regardless of whether or not $(-, -)$ is degenerate to begin with: to see why, it suffices to show that the radical\footnote{If $V$ is a vector space and $B$ is a symmetric bilinear form on $V$, then the \textbf{radical} of $B$ is then given by $\Rad B := \{v \in V \mid \forall w \in V: B(v, w) = 0\}$.} of $\<-, -\>$ is non-zero, for which we can simply consider the following for any $X, Y \in \a$ and any $K \in \z$, and then exploit the invariance of $\<-, -\>$:
+                $$\<K, [X, Y]_{\frake}\> = \<[K, X]_{\frake}, Y\> = \<0, Y\> = 0$$
+
+            Not every Lie algebra with a non-trivial centre arises as a central extension (see \cite[Section 1]{garland_arithmetics_of_loop_groups} for details), so it is not true that any invariant symmetric bilinear form on such a Lie algebra must be degenerate. Central elements can pair non-trivially with other elements, such as in the construction of untwisted affine Kac-Moody algebras (cf. subsection \ref{subsection: a_fixed_untwisted_affine_kac_moody_algebra}) or in the construction of so-called \say{extended toroidal Lie algebras} (cf. definition \ref{def: extended_toroidal_lie_algebras}).
+        \end{remark}
