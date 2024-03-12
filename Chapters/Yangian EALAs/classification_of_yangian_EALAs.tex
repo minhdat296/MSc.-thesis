@@ -1,0 +1,96 @@
+\section{Classification of Yangian extended toroidal Lie algebras}
+    \subsection{Yangian toroidal cocycles}
+        Let:
+            $$0 \to \p \to \fraky \xrightarrow[]{\pi} \d \to 0$$
+        be a Lie algebra extension such that $\p$ is an $\d$-module, i.e. let $\fraky$ be a twisted semi-direct product $\p \rtimes^{\sigma} \d$ (where $\sigma: \bigwedge^2 \d \to \p$ is some $2$-cocycle). In proposition \ref{prop: twisted_semi_direct_product_criterion}, we have seen that any such cocycle arises as the difference:
+            $$\sigma(D, D') := [\gamma(D), \gamma(D')]_{\fraky} - \gamma( [D, D']_{\d} )$$
+        for arbitrary elements $D, D' \in \d$ and for some choice of linear section:
+            $$\gamma: \d \to \fraky$$
+        We therefore see that to give such a linear section $\gamma: \d \to \fraky$ is the same as to give a $2$-cocycle $\sigma: \bigwedge^2 \d \to \p$, i.e. the cocycle $\sigma$ measures how far the extension $(\fraky, \pi)$ is away from splitting, i.e. from being the semi-direct product $\p \rtimes \d$ (which is more-or-less the definition of $2$-cocycles of Lie algebras; cf. definition \ref{def: twisted_semi_direct_products}).
+
+        Keeping the above in mind, let us return to the setting of definition \ref{def: yangian_extended_toroidal_lie_algebras}. An natural question to ask, given this definition, is as follows:
+        \begin{question}
+            Amongst the twisted semi-direct products $\fraky(\sigma) := \toroidal \rtimes^{\sigma} \d_{[2]}$, which ones are Yangian extended toroidal Lie algebras ? 
+        \end{question}
+        Since $\toroidal$ automatically embeds into any twited semi-direct product $\fraky(\sigma)$ as a Lie subalgebra, and since the underlying vector space of $\fraky(\sigma)$ is $\toroidal \oplus \d_{[2]}$ by definition, in order to answer this question, it shall suffice to give a criterion on the cocycle:
+            $$\sigma: \bigwedge^2 \d_{[2]} \to \toroidal$$
+        so that there would exist an \textit{invariant} and \textit{non-degenerate} symmetric bilinear form $(-, -)_{\sigma}$ on $\fraky(\sigma)$. Equivalently, one can give a criterion on the corresponding linear section:
+            $$\gamma: \d_{[2]} \to \fraky(\sigma)$$
+        which, as mentioned above, is such that:
+            $$\sigma(D, D') = [\gamma(D), \gamma(D')]_{\fraky(\sigma)} - \gamma( [D, D']_{\d_{[2]}} )$$
+
+        For convenience, let us fix the following terminologies.
+        \begin{definition}[General extended toroidal Lie algebras] \label{def: general_extended_toroidal_lie_algebras}
+            Any twisted semi-direct product:
+                $$\fraky(\sigma) := \toroidal \rtimes^{\sigma} \d_{[2]}$$
+            shall be called an \textbf{extended toroidal Lie algebra}.
+        \end{definition}
+        \begin{definition}[Yangian toroidal cocycles] \label{def: yangian_toroidal_cocycles}
+            Any $2$-cocyle $\sigma: \bigwedge^2 \d_{[2]} \to \toroidal$ shall be referred to as a \textbf{toroidal $2$-cocycle}. If the codomain of a toroidal $2$-cocycle is contained in $\z_{[2]} = \z(\toroidal)$, then we shall refer to said $2$-cocycle as being \textbf{central}.
+            
+            Any toroidal $2$-cocycle $\sigma$ such that $\fraky(\sigma)$ is a Yangian extended toroidal Lie algebra (in the sense of definition \ref{def: yangian_extended_toroidal_lie_algebras}) shall be called a \textbf{Yangian toroidal $2$-cocycle}.
+        \end{definition}
+        \begin{remark}
+            Since we now know that Yangian extended toroidal Lie algebras are necessarily isomorphic to some twisted semi-direct product $\fraky(\sigma)$ (cf. theorem \ref{theorem: yangian_extended_toroidal_lie_algebras_preliminary_version} and corollary \ref{coro: yangian_extended_toroidal_lie_algebras_are_twisted_semi_direct_products}), definitions \ref{def: general_extended_toroidal_lie_algebras} and \ref{def: yangian_toroidal_cocycles} as above make sense.
+        \end{remark}
+
+    \subsection{Classifying Yangian extended toroidal Lie algebras}
+        Fix a toroidal $2$-cocyle:
+            $$\sigma: \bigwedge^2 \d_{[2]} \to \toroidal$$
+        along with a \textit{non-degenerate} symmetric bilinear form:
+            $$(-, -)_{\sigma}: \Sym^2_k( \fraky(\sigma) ) \to k$$
+        such that:
+        \begin{itemize}
+            \item the restriction of $(-, -)_{\sigma}$ down to the vector subspace $\g_{[2]} \oplus \z_{[2]}$ coincides with $(-, -)_{\toroidal}$, and
+            \item $(\z_{[2]}, \d_{[2]})_{\sigma} \not = 0$ and $(\g_{[2]}, \d_{[2]})_{\sigma} = 0$ and $(\d_{[2]}, \d_{[2]})_{\sigma} = 0$.
+        \end{itemize}
+        Our task now, as indicated above, is to find a criterion on $\sigma$ so that $(-, -)_{\sigma}$ would be invariant with respect to the Lie bracket on $\fraky(\sigma)$.
+        
+        Firstly, observe that, per theorem \ref{theorem: yangian_extended_toroidal_lie_algebras} and corollary \ref{coro: yangian_extended_toroidal_lie_algebras_are_twisted_semi_direct_products}, we can infer particularly that:
+            $$(-, -)_{\sigma}$$
+        for any $\sigma$, is invariant with respect to $[-, -]_0$, in the sense that:
+            $$([X, Y]_0, Z)_{\sigma} = (X, [Y, Z]_0)_{\sigma}$$
+        for any $X + D, Y + D', Z + D'' \in \toroidal \oplus \d_{[2]}$. Next, recall that by definition \ref{def: twisted_semi_direct_products} (see also: example \ref{example: lie_algebra_semi_direct_products}), the Lie bracket on the twisted semi-direct product $\fraky(\sigma)$, which henceforth will be denoted by $[-, -]_{\sigma}$, is given by:
+            $$[-, -]_{\sigma} = [-, -]_0 + \sigma \circ \pi$$
+        where $[-, -]_0$ denotes the Lie bracket on the semi-direct product $\fraky(0) \cong \toroidal \rtimes \d_{[2]}$ and $\pi: \fraky(\sigma) \to \d_{[2]}$ is the canonical projection. Then, consider the following:
+            $$
+                \begin{aligned}
+                    ([X + D', Y + D'']_{\sigma}, Z + D'')_{\sigma} & = ([X + D, Y + D']_0 + \sigma(D, D'), Z)_{\sigma}
+                    \\
+                    & = ([X + D, Y + D']_0, Z + D'')_{\sigma} + (\sigma(D, D'), Z + D'')_{\sigma}
+                    \\
+                    & = (X + D, [Y + D', Z + D'']_0)_{\sigma} + (\sigma(D, D'), Z + D'')_{\sigma}
+                \end{aligned}
+            $$
+        We see then, that it shall suffices to find conditions on $\sigma$ so that:
+            $$(\sigma(D, D'), Z + D'')_{\sigma} = (X + D, \sigma(D', D''))_{\sigma}$$
+        For any $\zeta \in \g_{[2]} \oplus \z_{[2]} \oplus \d_{[2]}$, let us write:
+            $$\zeta := \zeta_{\g_{[2]}} + \zeta_{\z_{[2]}} + \zeta_{\d_{[2]}}$$
+        for its decomposition into its $\g_{[2]}$, $\z_{[2]}$, and $\d_{[2]}$-summands. We see then, that the equation $(\sigma(D, D'), Z + D'')_{\sigma} = (X + D, \sigma(D', D''))_{\sigma}$ is equivalently to:
+            $$(\sigma(D, D')_{\g_{[2]}}, Z_{\g_{[2]}})_{\sigma} + (\sigma(D, D')_{\z_{[2]}}, D'')_{\sigma} = (X_{\g_{[2]}}, \sigma(D', D'')_{\g_{[2]}})_{\sigma} + (D, \sigma(D', D'')_{\z_{[2]}})_{\sigma}$$
+        As $X, Y, Z \in \toroidal$ were chosen arbitrarily, the problem can thus be rephrased as follows.
+        \begin{question}
+            What are the necessarily conditions on a given toroidal $2$-cocycle:
+                $$\sigma: \bigwedge^2 \d_{[2]} \to \toroidal$$
+            so that:
+                $$(\sigma(D, D')_{\g_{[2]}}, yg)_{\sigma} + (\sigma(D, D')_{\z_{[2]}}, D'')_{\sigma} = (xf, \sigma(D', D'')_{\g_{[2]}})_{\sigma} + (D, \sigma(D', D'')_{\z_{[2]}})_{\sigma}$$
+            for all $D, D', D'' \in \d_{[2]}$, and for all $x, y \in \g$ and all $f, g \in A$.
+        \end{question}
+        \begin{remark}
+            Note that if $\sigma$ is a central toroidal $2$-cocycle, then it shall suffice to find a condition that it must satisfy so that:
+                $$(\sigma(D, D')_{\z_{[2]}}, D'')_{\sigma} = (D, \sigma(D', D'')_{\z_{[2]}})_{\sigma}$$
+            in order to make sure that the bilinear form $(-, -)_{\sigma}$ would be invariant with respect to $[-, -]_{\sigma}$.
+        \end{remark}
+
+        \begin{lemma}[A Yangian-ness criterion for central toroidal cocycles] \label{lemma: yangian_criterion_for_central_toroidal_cocycles}
+            
+        \end{lemma}
+            \begin{proof}
+                
+            \end{proof}
+        \begin{theorem}[A Yangian-ness criterion for toroidal cocycles] \label{theorem: yangian_criterion_for_toroidal_cocycles}
+            
+        \end{theorem}
+            \begin{proof}
+                
+            \end{proof}

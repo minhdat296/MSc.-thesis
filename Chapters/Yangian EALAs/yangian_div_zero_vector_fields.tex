@@ -1,8 +1,18 @@
-\section{Construction Yangian extended toroidal Lie algebras}
-    \subsection{Extending \texorpdfstring{$\toroidal$}{} by derivations to fix degeneracy}
-        The point to constructing the so-called \say{Yangian extended affine Lie algebras} is to fix the issue, whereby any \textit{invariant}\footnote{Let $\a$ be a Lie algebra with non-zerfo centre and $(-, -)$ be such an invariant symmetric bilinear form thereon. Then, for all $x, y \in \a$ and all $K \in \z(\a)$, we will have that $(K, [x, y]) = ([K, x], y) = (0, y) = 0$, thus proving that $(-, -)$ is degenerate.} symmetric bilinear form on:
+\section{Constructing Yangian extended toroidal Lie algebras}
+    \todo[inline]{Reorganised the construction of Yangian extended toroidal Lie algebras.}
+
+    \subsection{Outline of the construction}
+        The point of constructing the so-called \say{Yangian extended toroidal Lie algebras} is to fix the issue, whereby any \textit{invariant}\footnote{Let $\a$ be a perfect Lie algebra with non-zero centre and $(-, -)$ be such an invariant symmetric bilinear form thereon. Then, for all $x, y \in \a$ and all $K \in \z(\a)$, we will have that $(K, [x, y]) = ([K, x], y) = (0, y) = 0$, thus proving that $(-, -)$ is degenerate. The assumption that $\a$ is perfect is important here because otherwise, not every element thereof can be written as $[x, y]$, and therefore $(K, [x, y]) = 0$ for all $K \in \z(\a)$ and all $x, y \in \a$ would not imply that $(-, -)$ has a non-zero radical.} symmetric bilinear form on:
             $$\toroidal:= \uce(\g_{[2]})$$
-        is necessarily degenerate. We do this by formally introducing a \say{complementary} vector space $\d_{[2]}$ whose elements shall pair non-degenerately with those of $\z_{[2]}$. We will see (cf. lemma \ref{lemma: derivation_action_on_multiloop_algebras}) that these complementary elements are in fact certain $k$-linear derivations on $A$, which then allows us to show that $\extendedtoroidal$ is a $\der_k(A)$-module (decomposing into a direct sum of the submodules $\g_{[2]}$ and $\z_{[2]}$; see lemmas \ref{lemma: derivation_action_on_multiloop_algebras} and \ref{lemma: derivation_action_on_toroidal_centres}, respectively).
+        is necessarily degenerate. We do this by formally introducing a \say{complementary} vector space $\d_{[2]}$ whose elements shall pair non-degenerately with those of $\z_{[2]}$. We will see that these complementary elements are in fact certain $k$-linear derivations on $A$, which then allows us to show that $\extendedtoroidal$ is a $\der_k(A)$-module. Moreover, $\d_{[2]}$ can be shown to be closed under the commutator bracket, and hence a Lie subalgebra of $\der_k(A)$. Consequently, $\extendedtoroidal$ is a $\d_{[2]}$-module. If we can then also show that $\extendedtoroidal$ arises as a Lie algebra extension of the form:
+            $$0 \to \toroidal \to \extendedtoroidal \to \d_{[2]} \to 0$$
+        then the hypotheses proposition \ref{prop: twisted_semi_direct_product_criterion} will have been met. The proposition will then tell us that:
+            $$\extendedtoroidal \cong \toroidal \rtimes^{\sigma} \d_{[2]}$$
+        for some $2$-cocycle:
+            $$\sigma: \bigwedge^2 \d \to \toroidal$$
+        We will also see that it is enough to specify a $2$-cocycle:
+            $$\sigma: \bigwedge^2 \d_{[2]} \to \z_{[2]}$$
+        which is better, since $\z_{[2]}$ is abelian, unlike $\toroidal$.
         
         \begin{convention} \label{conv: orthogonal_complement_of_toroidal_centres}
             From now on, $\d_{[2]}$ shall be the $k$-vector space:
@@ -14,20 +24,65 @@
                 \item the elements $D_{r, s}, D_v, D_t$ are graded-dual with respect to $(-, -)_{\extendedtoroidal}$ to the elements $K_{r, s}, c_v, c_t$, respectively;
                 \item $(\g_{[2]}, \z_{[2]} \oplus \d_{[2]})_{\extendedtoroidal} := 0$;
                 \item $(\z_{[2]}, \z_{[2]})_{\extendedtoroidal} = (\d_{[2]}, \d_{[2]})_{\extendedtoroidal} := 0$;
-                \item $(-, -)_{\extendedtoroidal}|_{\Sym^2_k(\g_{[2]})} := (-, -)_{\g_{[2]}}$
+                \item $(-, -)_{\extendedtoroidal}|_{\Sym^2_k(\toroidal)} := (-, -)_{\toroidal}$
             \end{itemize}
         \end{convention}
 
-        We now seek to construct a Lie bracket:
+        In order to show that there is a Lie algebra extension:
+            $$0 \to \toroidal \to \extendedtoroidal \to \d_{[2]} \to 0$$
+        we must firstly construct Lie brackets:
             $$[-, -]_{\extendedtoroidal}$$
-        on the vector space $\extendedtoroidal := \toroidal \oplus \d_{[2]}$ such that:
+        on the vector space $\extendedtoroidal := \toroidal \oplus \d_{[2]}$. We shall require that the Lie brackets $[-, -]_{\extendedtoroidal}$ satsify the following properties:
         \begin{itemize}
             \item $(-, -)_{\extendedtoroidal}$ is invariant with respect to $[-, -]_{\extendedtoroidal}$, and
             \item $\toroidal := \uce(\g_{[2]})$ with its Lie bracket as in theorem \ref{theorem: kassel_realisation} embeds naturally as a Lie subalgebra into $\extendedtoroidal$ with the bracket $[-, -]_{\extendedtoroidal}$. 
         \end{itemize}
-        We will do this by first identifying elements of $\d_{[2]}$ as certain derivations on $A$ (prompted by the fact that $\d_{[2]}$ is dual to $\z_{[2]}$, whose elements are differential $1$-forms of a certain kind), which will be done by exploiting the invariance of the bilinear form $(-, -)_{\extendedtoroidal}$ (see lemma \ref{lemma: derivation_action_on_multiloop_algebras}). Afterwards, we shall see that $\d_{[2]}$ is actually a Lie subalgebra of the Lie algebra $\der_k(A)$ of derivations on $A$ (with its usual commutator bracket), and we will end the subsection with the conclusion that $\toroidal$ is thus naturally a $\der_k(A)$-module (see proposition \ref{prop: toroidal_lie_algebras_as_modules_over_vector_field_lie_algebras}). In fact, it is a $\d_{[2]}$-module, and $\extendedtoroidal$ is a Lie algebra extension of $\d_{[2]}$ by $\toroidal$, but this is a subtler point and thus we will dedicate the next subsection to discussing it.  
 
-        Let us firstly see how elements of $\d_{[2]}$ might act on those of $\g_{[2]}$, with respect to some Lie bracket $[-, -]_{\extendedtoroidal}$. \todo{Previously a remark.}
+        \begin{definition}[Yangian extended toroidal Lie algebras] \label{def: yangian_extended_toroidal_lie_algebras}
+            A \textbf{Yangian extended toroidal Lie algebra} is a Lie algebra $\fraky$ satisfying the following properties:
+            \begin{itemize}
+                \item The underlying vector space of $\fraky$ is isomorphic to $\g_{[2]} \oplus \z_{[2]} \oplus \d_{[2]}$.
+                \item There is an invariant and non-degenerate symmetric bilinear form $(-, -)_{\fraky}$ whose restriction down to $\toroidal$ coincides with $(-, -)_{\toroidal}$ as subsection \ref{subsection: toroidal_lie_algebra_conventions}.
+                \item There exists an injective Lie algebra homomorphism $\toroidal \hookrightarrow \fraky$.
+            \end{itemize}
+        \end{definition}
+        \begin{remark}[Regarding terminologies]
+            Our notion of Yangian extended toroidal Lie algebras does not quite coincide with the very similar notion of an \say{toroidal extended affine Lie algebra} (also known as \say{extended affine Lie algebras of nullity $2$}) that appeared, for instance, in \cite{billig_representations_of_toroidal_extended_affine_lie_algebras} and \cite{neher_lectures_on_EALAs}. Ultimately, this is because the bilinear form that we have endowed $\g_{[2]}$ with is of degree $-1$ (as opposed to $0$) in the second variable. For the latter, instead of $\d_{[2]}$, one would consider the Lie algebra of divergence-free algebraic vector fields on the (smooth) affine $k$-scheme $\Spec A \cong \G_m^2$.
+        \end{remark}
+
+        The main theorem of this section is the following constructive existence result. In the next section, we will present a converse statement to this result, serving as a classification result for Yangian extended toroidal Lie algebras.
+        \begin{theorem} \label{theorem: yangian_extended_toroidal_lie_algebras_preliminary_version}
+            Any Yangian toroidal Lie algebra is isomorphic to some twisted semi-direct product:
+                $$\toroidal \rtimes^{\sigma} \d_{[2]}$$
+            for some $2$-cocycle of $\d_{[2]}$ with values in $\z_{[2]}$.
+        \end{theorem}
+
+        \todo[inline]{Added outline of the proof of main theorem.}
+        Now, in order to prove theorem \ref{theorem: yangian_extended_toroidal_lie_algebras_preliminary_version}, we shall proceed in the following steps:
+        \begin{enumerate}
+            \item Prove that $\d_{[2]}$ is a vector subspace of $\der_k(A)$ (cf. lemma \ref{lemma: derivation_action_on_multiloop_algebras}).
+            \item Prove that $\toroidal$ is a $\der_k(A)$-module (cf. lemmas \ref{lemma: derivation_action_on_multiloop_algebras} and \ref{lemma: derivation_action_on_toroidal_centres}, which together imply proposition \ref{prop: toroidal_lie_algebras_as_modules_over_vector_field_lie_algebras}).
+            \item Prove that for any Lie bracket $[-, -]_{\extendedtoroidal}$ on $\extendedtoroidal$ with respect to which $(-, -)_{\extendedtoroidal}$ is invariant, one shall have for all $D, D' \in \d_{[2]}$ that:
+                $$[D, D']_{\extendedtoroidal} = [D, D'] + K(D, D')$$
+            where $[-, -]$ means the usual commutator bracket, and $K(D, D') \in \z_{[2]}$ is some element depending on the choices of $D, D'$ (cf. proposition \ref{prop: lie_bracket_on_orthogonal_complement_of_toroidal_centre}). This implies that the vector subspace $\d_{[2]}$ of $\der_k(A)$ is closed under the usual commutator bracket $[-, -]$ and hence, identifiable with a Lie subalgebra thereof, meaning that we indeed have a Lie algebra extension:
+                $$0 \to \toroidal \to \extendedtoroidal \to \d_{[2]} \to 0$$
+            Because $\toroidal$ is a $\der_k(A)$-module, it is also a $\d_{[2]}$-module, and therefore $\extendedtoroidal$ must be a twisted semi-direct product:
+                $$\extendedtoroidal \cong \toroidal \rtimes^{\sigma} \d_{[2]}$$
+            for some $2$-cocycle $\sigma: \bigwedge^2 \d_{[2]} \to \toroidal$, according to proposition \ref{prop: twisted_semi_direct_product_criterion}.
+            \item In lemma \ref{lemma: derivation_action_on_multiloop_algebras}, we can only show that $[\d_{[2]}, \g_{[2]}]_{\extendedtoroidal} \subseteq \toroidal$ but it can now also be shown that:
+                $$[\d_{[2]}, \g_{[2]}]_{\extendedtoroidal} \subseteq \g_{[2]}$$
+            (cf. corollary \ref{coro: derivation_action_on_multiloop_algebras}). In lemma \ref{lemma: derivation_action_on_toroidal_centres}, it was already shown that:
+                $$[\d_{[2]}, \z_{[2]}]_{\extendedtoroidal} \subseteq \z_{[2]}$$
+            Thus, we have a direct sum decomposition of $\d_{[2]}$-modules:
+                $$\toroidal \cong \g_{[2]} \oplus \z_{[2]}$$
+            which, in combination with the fact that $[\d_{[2]}, \d_{[2]}]_{\extendedtoroidal} \subseteq \d_{[2]} \oplus \z_{[2]}$, tells us that the aforementioned $2$-cocycles $\sigma: \bigwedge^2 \d_{[2]} \to \toroidal$ actually is specified by $2$-cocycles:
+                $$\sigma: \bigwedge^2 \d_{[2]} \to \z_{[2]}$$
+            In other words, we have constructed twisted semi-direct products:
+                $$\z_{[2]} \rtimes^{\sigma} \d_{[2]}$$
+        \end{enumerate}
+
+    \subsection{Extending \texorpdfstring{$\toroidal$}{} by derivations to fix degeneracy}
+        Let us firstly see how elements of $\d_{[2]}$ might act on those of $\g_{[2]}$, with respect to some Lie bracket $[-, -]_{\extendedtoroidal}$. 
         \begin{lemma}[$\d_{[2]}$ acts on $\g_{[2]}$ by derivations] \label{lemma: derivation_action_on_multiloop_algebras}
             The elements $D \in \d_{[2]}$ act as derivations on $A$, in the sense that:
                 $$[D, xf]_{\extendedtoroidal} = x \xi_D(f) + K_{D, xf}$$
@@ -203,7 +258,7 @@
             We note also that it is not even clear \textit{a priori} that the $\d_{[2]}$-summand of the commutators of the form $[D, D']_{\extendedtoroidal}$ has to be the usual commutator inherited from $\der_k(A)$; this turns out to be true, but follows from some non-trivial computations (cf. proposition \ref{prop: lie_bracket_on_orthogonal_complement_of_toroidal_centre}). 
         \end{remark}
 
-        Now that we know how $\d_{[2]}$ acts on $\g_{[2]}$, it remains to see how it acts on $\z_{[2]}$ to completely determine its action on $\toroidal$. \todo{Previously a remark.}
+        Now that we know how $\d_{[2]}$ acts on $\g_{[2]}$, it remains to see how it acts on $\z_{[2]}$ to completely determine its action on $\toroidal$. 
         \begin{lemma}[$\d_{[2]}$ acts on $\z_{[2]}$ by Lie derivatives] \label{lemma: derivation_action_on_toroidal_centres}
             Elements of $\d_{[2]}$ act on those of $\z_{[2]}$ as Lie derivatives. This is to say that, the elements $D \in \d_{[2]}$ act on the generating elements $f \bar{d}g \in \z_{[2]}$ (for some $f, g \in A$) in the following manner:
                 $$[D, f \bar{d}g]_{\extendedtoroidal} = \xi_D(f) \bar{d}g + f \bar{d}(\xi_D(g))$$
@@ -245,30 +300,10 @@
         \begin{corollary}
             With respect to the bracket $[-, -]_{\extendedtoroidal}$, the vector subspace $\toroidal$ is actually a Lie ideal of $\extendedtoroidal$.
         \end{corollary}
-        In light of lemma \ref{lemma: derivation_action_on_toroidal_centres}, we see also that the $\z_{[2]}$-summands of the elements of $[\d_{[2]}, \g_{[2]}]_{\extendedtoroidal}$ (cf. lemma \ref{lemma: derivation_action_on_multiloop_algebras}) necessarily vanish., yielding us the following second corollary to the lemma. \todo{Previously a remark.}
-        \begin{corollary}[\texorpdfstring{$\z_{[2]}$}{}-summands of elements of \texorpdfstring{$[\d_{[2]}, \g_{[2]}]_{\extendedtoroidal}$}{}] \label{coro: derivation_action_on_multiloop_algebras}
-            The action of $\d_{[2]}$ on $\g_{[2]}$ as in lemma \ref{lemma: derivation_action_on_multiloop_algebras} satisfies:
-                $$[\d_{[2]}, \g_{[2]}]_{\extendedtoroidal} \subseteq \g_{[2]}$$
-        \end{corollary}
-            \begin{proof}
-                Firstly, let us note that by using invariance, we yield:
-                    $$( [ D, X ]_{\extendedtoroidal}, \xi )_{\extendedtoroidal} = (X, [\xi, D]_{\extendedtoroidal})_{\extendedtoroidal} = 0$$
-                wherein the last equality is due to the fact that:
-                    $$[\xi, D]_{\extendedtoroidal} \in \z_{[2]} \oplus \d_{[2]}$$
-                (cf. lemma \ref{lemma: derivation_action_on_multiloop_algebras}) and the fact that:
-                    $$( \g_{[2]}, \z_{[2]} \oplus \d_{[2]} )_{\extendedtoroidal} = 0$$
-                per the construction of the bilnear form $(-, -)_{\extendedtoroidal}$ as in convention \ref{conv: orthogonal_complement_of_toroidal_centres}. We thus have that:
-                    $$(K(X), \xi)_{\extendedtoroidal} = (X, [\xi, D]_{\extendedtoroidal})_{\extendedtoroidal} = 0$$
-                for every $\xi \in \d_{[2]}$. The non-degeneracy of $(-, -)_{\extendedtoroidal}$ then implies through this fact that:
-                    $$K(X) = 0$$
-                As such, we have that:
-                    $$[ \d_{[2]}, \g_{[2]} ]_{\extendedtoroidal} \subseteq \g_{[2]}$$
-                as claimed. 
-            \end{proof}
 
         We have now reached the following conclusion, as eluded to at the beginning of the subsection:
-        \begin{proposition}[$\toroidal$ as a $\der_k(A)$-module] \label{prop: toroidal_lie_algebras_as_modules_over_vector_field_lie_algebras}
-            $\toroidal$ is a $\der_k(A)$-module, decomposing into a direct sum of the submodules $\g_{[2]}$ and $\z_{[2]}$. 
+        \begin{proposition} \label{prop: toroidal_lie_algebras_as_modules_over_vector_field_lie_algebras}
+            $\toroidal$ is a $\der_k(A)$-module.
         \end{proposition}
         We note that even in light of this proposition and the fact that $\extendedtoroidal$ admits $\toroidal$ as a Lie ideal, we still do not yet know enough to conclude that $\extendedtoroidal$ necessarily arises as a Lie algebra extension with kernel $\toroidal$. It remains to investigate how the brackets of the form:
             $$[D, D']_{\extendedtoroidal}$$
@@ -277,7 +312,15 @@
     \subsection{Non-uniqueness of Yangian extended toroidal Lie brackets}
         Let us now change our perspective on $\d_{[2]}$ slightly. We begin by demonstrating (cf. proposition \ref{prop: lie_bracket_on_orthogonal_complement_of_toroidal_centre} and the corollary that follows) that for any $D, D' \in \d_{[2]}$, there exists some $K(D, D') \in \z_{[2]}$ such that:
             $$[D, D']_{\extendedtoroidal} = [D, D'] + K(D, D')$$
-        with $[D, D'] := DD' - D'D$ denoting the usual commutator; this allows us to regard $\d_{[2]}$ as a Lie subalgebra of $\der_k(A)$. Because we now know from the previous subsection that $\toroidal$ is a $\der_k(A)$-module, the above implies that $\toroidal$ is also a $\d_{[2]}$-module (cf. proposition \ref{prop: toroidal_lie_algebras_as_modules_over_div_0_vector_field_lie_algebras}), and we are thus able to regard $\extendedtoroidal$ as a Lie algebra extension of $\d_{[2]}$ with kernel $\toroidal$. This then begs the question about the (non-)uniqueness of the Lie algebra structure on $\extendedtoroidal$: namely, how many isomorphism classes of Lie algebra structures on $\extendedtoroidal$ are there ? Of course, there is always the semi-direct product, corresponding to the zero $2$-cocycle of $\d_{[2]}$ with coefficients in $\z_{[2]}$ (cf. example \ref{example: lie_algebra_semi_direct_products}). Additionally, there are two isomorphism classes of Lie algebra structures different from the semi-direct product, corresponding to two non-zero isomorphism classes of $2$-cocycles of $\d_{[2]}$ with coefficients in $\z_{[2]}$ (see remark \ref{remark: non_uniqueness_of_yangian_extended_lie_algebras} and theorem \ref{theorem: non_uniqueness_of_yangian_extended_lie_algebras}); these have been known since \cite{billig_energy_momentum_tensor}. 
+        with $[D, D'] := DD' - D'D$ denoting the usual commutator; this allows us to regard $\d_{[2]}$ as a Lie subalgebra of $\der_k(A)$. Because we now know from the previous subsection that $\toroidal$ is a $\der_k(A)$-module, the above implies that $\toroidal$ is also a $\d_{[2]}$-module (cf. proposition \ref{prop: toroidal_lie_algebras_as_modules_over_div_0_vector_field_lie_algebras}), and we are thus able to regard $\extendedtoroidal$ as a Lie algebra extension of $\d_{[2]}$ with kernel $\toroidal$. In fact, according to proposition \ref{prop: twisted_semi_direct_product_criterion}, we have that:
+            $$\extendedtoroidal \cong \toroidal \rtimes^{\sigma} \d_{[2]}$$
+        for some $2$-cocycle $\sigma: \bigwedge^2 \d_{[2]} \to \t$.
+        
+        This then begs the question about the (non-)uniqueness of the Lie algebra structure on $\extendedtoroidal$: namely, how many isomorphism classes of Lie algebra structures on $\extendedtoroidal$ are there, i.e. what are the possible cocycles $\sigma$ ? Of course, there is always the semi-direct product, corresponding to:
+            $$\sigma = 0$$
+        (cf. example \ref{example: lie_algebra_semi_direct_products}). We shall see that, actually, there are two additional isomorphism classes of Lie algebra structures different from the semi-direct product, corresponding to two non-zero $2$-cocycles:
+            $$\sigma_1, \sigma_2$$
+        (see remark \ref{remark: non_uniqueness_of_yangian_extended_lie_algebras} and theorem \ref{theorem: non_uniqueness_of_yangian_extended_lie_algebras}), which have been known since \cite{billig_energy_momentum_tensor}. 
         
         \begin{proposition}[How does $\d_{[2]}$ act on itself] \label{prop: lie_bracket_on_orthogonal_complement_of_toroidal_centre}
             Let $\d_{[2]}$ be given as in convention \ref{conv: orthogonal_complement_of_toroidal_centres}. Then:
@@ -360,7 +403,103 @@
         \begin{corollary}
             For any $D, D' \in \d_{[2]}$, the $\d_{[2]}$-summand of $[D, D']_{\extendedtoroidal}$ is nothing but the commutator $DD' - D'D$.
         \end{corollary} 
-        In light of the above, it is also valuable to know how the $\d_{[2]}$-summand of the commutators:
+        \todo[inline]{Fixed statement and proof of the fact that $[\d_{[2]}, \g_{[2]}]_{\extendedtoroidal} \subseteq \g_{[2]}$.}
+        \begin{corollary}[\texorpdfstring{$\z_{[2]}$}{}-summands of elements of \texorpdfstring{$[\d_{[2]}, \g_{[2]}]_{\extendedtoroidal}$}{}] \label{coro: derivation_action_on_multiloop_algebras}
+            The action of $\d_{[2]}$ on $\g_{[2]}$ as in lemma \ref{lemma: derivation_action_on_multiloop_algebras} satisfies:
+                $$[\d_{[2]}, \g_{[2]}]_{\extendedtoroidal} \subseteq \g_{[2]}$$
+            From this, one can also infer that $\toroidal \cong \g_{[2]} \oplus \z_{[2]}$ is a direct sum of $\der_k(A)$-modules. 
+        \end{corollary}
+            \begin{proof}
+                From lemma \ref{lemma: derivation_action_on_multiloop_algebras}, we know that given some $D \in \d_{[2]}$ and some $x \in \g$ and $f \in A$, there shall exist $K(D, xf) \in \z_{[2]}$ (depending on the choices of $D$ and $x, f$) such that:
+                    $$[D, xf]_{\extendedtoroidal} = x D(f) + K(D, xf)$$
+                Next, consider the following:
+                    $$( \d_{[2]}, x D(f) + K(D, xf) )_{\extendedtoroidal} = ( \d_{[2]}, [D, xf]_{\extendedtoroidal} )_{\extendedtoroidal} = ( [\d_{[2]}, D]_{\extendedtoroidal}, xf )_{\extendedtoroidal} = 0$$
+                where the second equality holds thanks to invariance, and the third equality holds due to a combination of the fact that $[\d_{[2]}, \d_{[2]}]_{\extendedtoroidal} \subset \z_{[2]} \oplus \d_{[2]}$ (cf. proposition \ref{prop: lie_bracket_on_orthogonal_complement_of_toroidal_centre}) and the fact that $(\z_{[2]} \oplus \d_{[2]}, \g_{[2]})_{\extendedtoroidal}$ per the construction of the bilinear form $(-, -)_{\extendedtoroidal}$ (cf. convention \ref{conv: orthogonal_complement_of_toroidal_centres}). We also have the following, again per the construction of the bilinear form $(-, -)_{\extendedtoroidal}$:
+                    $$( \d_{[2]}, x D(f) + K(D, xf) )_{\extendedtoroidal} = ( \d_{[2]}, K(D, xf) )_{\extendedtoroidal}$$
+                which means that:
+                    $$( \d_{[2]}, K(D, xf) )_{\extendedtoroidal} = 0$$
+                The non-degeneracy of $(-, -)_{\extendedtoroidal}$ (or more particularly, the fact that $( \d_{[2]}, \z_{[2]} )_{\extendedtoroidal} \not = 0$) then implies that:
+                    $$K(D, xf) = 0$$
+                necessarily. This means that, indeed, we have that:
+                    $$[D, xf]_{\extendedtoroidal} = x D(f)$$
+                for all $D \in \d_{[2]}$ and all $x \in \g$ and all $f \in A$. Since $\g_{[2]}$ is generated by elements of the form $xf$, this implies that:
+                    $$[\d_{[2]}, \g_{[2]}]_{\extendedtoroidal} \subseteq \g_{[2]}$$
+                as claimed. 
+            \end{proof}
+
+        \todo[inline]{Intrinsic description of $\d_{[2]}$}
+        \todo[inline]{I decided to not use the notation $\der_{\gamma}(A)$ nor the term "$\gamma$-extended Lie algebras", which was confusing me while writing the classification section, since $\gamma$ does not vary for us.}
+        As an interlude, let us give an intrinsic description of $\d_{[2]}$ as a Lie algebra of derivations satisfying certain properties. This is done in light of the knowledge that:
+        \begin{itemize}
+            \item firstly, it makes sense to regard $\d_{[2]}$ as a Lie subalgebra of $\der_k(A)$ (cf. proposition \ref{prop: lie_bracket_on_orthogonal_complement_of_toroidal_centre}), and 
+            \item secondly, that given any $x \in \g, f \in A$ and any $D \in \d_{[2]}$, one has that:
+                $$[D, xf]_{\extendedtoroidal} = x D(f)$$
+            (cf. corollary \ref{coro: derivation_action_on_multiloop_algebras}).
+        \end{itemize}
+        \begin{definition}[Formal residue] \label{def: formal_residues}
+            The \textbf{formal residue} of any element $f(v_1, ..., v_n) \in k[v_1^{\pm 1}, ..., v_n^{\pm 1}]$ is then given by:
+                $$\Res_{(v_1, ..., v_n) = (0, ..., 0)}(f) := ( \Res_{v_n = 0} \circ ... \circ \Res_{v_1 = 0} )( f(v_1, ..., v_n) )$$
+            Each map:
+                $$\Res_{v_i = 0}: k[v_i, ..., v_n] \to k[v_{i + 1}, ..., v_n]$$
+            is takes as input an element $f(v_i, ..., v_n) \in k[v_{i + 1}, ..., v_n]$ and outputs the $k[v_{i + 1}, ..., v_n]$-coefficient of the term with $v_i^{-1}$, or $0$ if there is no such term. 
+        \end{definition}
+        \begin{remark}[Taking formal residues is linear]
+            It is not hard to see that:
+                $$\Res_{(v_1, ..., v_n) = (0, ..., 0)}( v_1^{m_1} ... v_n^{m_n} ) = \delta_{(m_1, ..., m_n), (-1, ..., -1)}$$
+            From this, one sees that:
+                $$\Res_{(v_1, ..., v_n) = (0, ..., 0)}: k[v_1, ..., v_n] \to k$$
+            is a linear map.
+        \end{remark}
+        \begin{proposition}[Intrinsic description of $\d_{[2]}$] \label{prop: intrinsic_description_of_yangian_div_zero_vector_fields}
+            Let us regard $\d_{[2]}$ as a Lie algebra, with the commutator bracket $[-, -]$. $\d_{[2]}$ is then equal to the Lie algebra:
+                $$\der_k(A)_{(v, t) = (0, 0)} := \{ D \in \der_k(A) \mid \forall f \in A: \Res_{(v, t) = (0, 0)}( v^{-1} D(f) ) = 0 \}$$
+        \end{proposition}
+            \begin{proof}
+                Firstly, we must check that the subset $\der_k(A)_{(v, t) = (0, 0)}$ of $\der_k(A)$ is indeed a vector subspace, and secondly, we must check that it is closed under the commutator bracket $[-, -]$, qualifying it as a Lie subalgebra of the latter. To prove the first assertion, simply take any linear combination:
+                    $$a D + b D'$$
+                of elements $D, D' \in \der_k(A)_{(v, t) = (0, 0)}$, and then consider the following for any arbitrary $f \in A$:
+                    $$\Res_{(v, t) = (0, 0)}( v^{-1} ( a D + b D' )(f) ) = a \Res_{(v, t) = (0, 0)}( v^{-1} D(f) ) + b\Res_{(v, t) = (0, 0)}( v^{-1} D'(f) ) = 0$$
+                To prove the second assertion, pick arbitrary elements $D, D' \in \in \der_k(A)_{(v, t) = (0, 0)}$ again, and then consider the following for any $f \in A$:
+                    $$\Res_{(v, t) = (0, 0)}( v^{-1} ([D, D'])(f) ) = \Res_{(v, t) = (0, 0)}( v^{-1} DD'(f) ) - \Res_{(v, t) = (0, 0)}( v^{-1} D'D(f) ) = 0$$
+
+                Now, to prove that:
+                    $$\d_{[2]} = \der_k(A)_{(v, t) = (0, 0)}$$
+                it shall suffice to prove that the underlying vector spaces are equal. Firstly, to prove that:
+                    $$\d_{[2]} \subset \der_k(A)_{(v, t) = (0, 0)}$$
+                it shall suffice to prove the basis elements $D \in \{D_{r, s}\}_{(r, s) \in \Z^2} \cup \{D_v, D_t\}$ satisfy:
+                    $$\Res_{(v, t) = (0, 0)}( v^{-1} D(f) ) = 0$$
+                for all $f \in A$, which we might as well take to be a basis element $v^m t^p$ (for some $(m, p) \in \Z^2$). In lemma \ref{lemma: derivation_action_on_multiloop_algebras}, we have already seen how the elements $D(v^m t^p) \in A$ are given for $D \in \d_{[2]}$ a basis vector, from which it can be easily seen that indeed, $-\Res_{(v, t) = (0, 0)}( v^{-1} D(f) ) = 0$. Conversely, to prove that:
+                    $$\d_{[2]} \supset \der_k(A)_{(v, t) = (0, 0)}$$
+                we shall need to show that any $D \in \der_k(A)_{(v, t) = (0, 0)}$ can be written as a linear combination of the elements of the basis $\{D_{r, s}\}_{(r, s) \in \Z^2} \cup \{D_v, D_t\}$. To that end, consider some:
+                    $$D := \sum_{(a, b) \in \Z^2} \lambda_{a, b} v^a t^b \del_v + \sum_{(a', b') \in \Z^2} \mu_{a', b'} v^{a'} t^{b'} \del_t \in \der_k(A)_{(v, t) = (0, 0)}$$
+                and then, for an arbitrary $(m, p) \in \Z^2$, consider:
+                    $$
+                        \begin{aligned}
+                            D(v^m t^p) & = \sum_{(a, b) \in \Z^2} \lambda_{a, b} v^a t^b \del_v(v^m t^p) + \sum_{(a', b') \in \Z^2} \mu_{a', b'} v^{a'} t^{b'} \del_t(v^m t^p)
+                            \\
+                            & = m \sum_{(a, b) \in \Z^2} \lambda_{a, b} v^{a + m - 1} t^{b + p} + p \sum_{(a', b') \in \Z^2} \mu_{a', b'} v^{a' + m} t^{b' + p - 1}
+                        \end{aligned}
+                    $$
+                From this, we infer that:
+                    $$
+                        \begin{aligned}
+                            \Res_{(v, t) = (0, 0)}( v^{-1} D(v^m t^p) ) & = m \sum_{(a, b) \in \Z^2} \lambda_{a, b} \delta_{(a + m, b + p), (-1, -1)} + p \sum_{(a', b') \in \Z^2} \mu_{a', b'} \delta_{(a' + m, b' + p), (0, 0)}
+                            \\
+                            & = m \lambda_{-m - 1, -p - 1} + p \mu_{-m, -p}
+                        \end{aligned}
+                    $$
+                Since we assumed that $D \in \der_k(A)_{(v, t) = (0, 0)}$, we must have that:
+                    $$0 = \Res_{(v, t) = (0, 0)}( v^{-1} D(v^m t^p) ) = m \lambda_{-m - 1, -p - 1} + p \mu_{-m, -p}$$
+                for all $(m, p) \in \Z^2$. By comparing this with how the elements $D_{r, s}, D_v, D_t$ are given in terms of the pari]tial derivatives $\del_v, \del_t$ (cf. lemma \ref{lemma: derivation_action_on_multiloop_algebras}), one sees thus that indeed, we have that:
+                    $$D \in \d_{[2]}$$
+                Since $D \in \der_k(A)_{(v, t) = (0, 0)}$ was chosen arbitrarily, this means that:
+                    $$\d_{[2]} \supset \der_k(A)_{(v, t) = (0, 0)}$$
+                We can thus conclude that:
+                    $$\d_{[2]} = \der_k(A)_{(v, t) = (0, 0)}$$
+                as needed.
+            \end{proof}
+        
+        In light of proposition \ref{prop: lie_bracket_on_orthogonal_complement_of_toroidal_centre}, it is also valuable to know how the $\d_{[2]}$-summand of the commutators:
             $$[D, D']_{\extendedtoroidal}$$
         are given explicitly. Later on, these computations will be used to prove that the centre of $\extendedtoroidal$ is $2$-dimensional, namely given by $k c_v \oplus k c_v$.
         \begin{lemma}[Explicitly commutators between basis elements of $\d_{[2]}$] \label{lemma: explicit_commutators_between_basis_elements_of_toroidal_central_orthogonal_complement}
@@ -459,34 +598,47 @@
                         $$[\d_{[2]}, c_t]_{\extendedtoroidal} = 0$$
                 \end{enumerate}
             \end{proof}
-        We will also see that in fact, the centre of $\extendedtoroidal$ is actually just spanend by $c_v$ and $c_t$. See proposition \ref{prop: centres_of_extended_toroidal_lie_algebras} and the discussion preceding it for more details.
+        We will also see that in fact, the centre of $\extendedtoroidal$ is actually just spanend by $c_v$ and $c_t$. See proposition \ref{prop: centres_of_yangian_extended_toroidal_lie_algebras} and the discussion preceding it for more details.
         
         \begin{proposition}[$\toroidal$ as a $\d_{[2]}$-module] \label{prop: toroidal_lie_algebras_as_modules_over_div_0_vector_field_lie_algebras}
             If we regard $\d_{[2]}$ as a Lie subalgebra of $\der_k(A)$ with the usual commutator bracket, then $\toroidal$ will be a $\d_{[2]}$-module, not just a $\der_k(A)$-module.
         \end{proposition}
         
-        In summary, we have yielded the following result:
-        \begin{theorem}[Yangian extended toroidal Lie algebras] \label{theorem: extended_toroidal_lie_algebras}
+        In summary, we have yielded the following result, which is a more explicit version of theorem \ref{theorem: yangian_extended_toroidal_lie_algebras_preliminary_version} that was stated at the beginning of the section:
+        \begin{theorem}[Yangian extended toroidal Lie algebras] \label{theorem: yangian_extended_toroidal_lie_algebras}
             Let $\d_{[2]}$ be equipped with the commutator bracket inherited from $\der_k(A)$.
         
             When endowed with the Lie bracket $[-, -]_{\extendedtoroidal}$\footnote{... which ultimately is specified by the Lie structure on $\toroidal$ and the non-degenerate and invariant symmetric bilinear form $(-, -)_{\extendedtoroidal}$ as in convention \ref{conv: orthogonal_complement_of_toroidal_centres}.} (as determined in lemmas \ref{lemma: derivation_action_on_multiloop_algebras} and \ref{lemma: derivation_action_on_toroidal_centres}, and proposition \ref{prop: lie_bracket_on_orthogonal_complement_of_toroidal_centre}), the vector space $\extendedtoroidal := \toroidal \oplus \d_{[2]}$ becomes a Lie algebra extension:
                 $$0 \to \toroidal \to \extendedtoroidal \to \d_{[2]} \to 0$$
             of $\d_{[2]}$ by $\toroidal$. 
         \end{theorem}
+        \begin{corollary}[Yangian extended toroidal Lie algebras are twisted semi-direct products] \label{coro: yangian_extended_toroidal_lie_algebras_are_twisted_semi_direct_products}
+            Let $\d_{[2]}$ be equipped with the commutator bracket inherited from $\der_k(A)$.
+        
+            Because the bilinear form $(-, -)_{\extendedtoroidal}$ is invariant with respect to $[-, -]_{\extendedtoroidal}$ by construction, $\extendedtoroidal$ is therefore a Yangian extended toroidal Lie algebra in the sense of definition \ref{def: yangian_extended_toroidal_lie_algebras}.
+
+            Also, because $\toroidal$ is a $\d_{[2]}$-module, we have that:
+                $$\extendedtoroidal \cong \toroidal \rtimes^{\sigma} \d_{[2]}$$
+            for some $2$-cocycle:
+                $$\sigma: \bigwedge^2 \d_{[2]} \to \toroidal$$
+        \end{corollary}
         \begin{remark}
-            Note that we do not yet know whether or not $\extendedtoroidal$ is unique (up to isomorphisms) as a Lie algebra extension of $\d_{[2]}$ by $\toroidal$. Due to how brackets on Lie algebra extensions are given (cf. proposition \ref{prop: lie_brackets_on_extensions}), the uniqueness or non-uniqueness (up to isomorphisms) of $\extendedtoroidal$ as a Lie algebra extension of $\d_{[2]}$ by $\toroidal$ lies in how the $\z_{[2]}$-summands of brackets of the form:
-                $$[D, D']_{\extendedtoroidal} \in \z_{[2]} \oplus \d_{[2]}$$
-            (for all $D, D' \in \d_{[2]}$) are given. Of course, when these summands are equally $0$, one gets $\extendedtoroidal$ as the semi-direct product of $\d_{[2]}$ by $\toroidal$:
-                $$\extendedtoroidal \cong \toroidal \rtimes \d_{[2]}$$
-            Otherwise, one shall need to find the number of isomorphism classes of non-zero $2$-cocycles of $\d_{[2]}$ with coefficients in $\z_{[2]}$ (again, see proposition \ref{prop: lie_brackets_on_extensions} for why), or in other words, compute the dimension of the vector space $H^2_{\Lie}(\d_{[2]}, \z_{[2]})$. Through remark \ref{remark: non_uniqueness_of_yangian_extended_lie_algebras} and theorem \ref{theorem: non_uniqueness_of_yangian_extended_lie_algebras} below, we will see that there are two non-zero isomorphism classes.
-        \end{remark}
-        \begin{definition}[Yangian extended toroidal Lie algebras] \label{def: extended_toroidal_lie_algebras}
-            We refer to $\extendedtoroidal$ as in theorem \ref{theorem: extended_toroidal_lie_algebras} as a \textbf{Yangian extended toroidal Lie algebra}. 
-        \end{definition}
-        \begin{remark}[Regarding terminologies]
-            Our notion of Yangian extended toroidal Lie algebras does not quite coincide with the very similar notion of an \say{toroidal extended affine Lie algebra} that appeared, for instance, in \cite{billig_representations_of_toroidal_extended_affine_lie_algebras}. Ultimately, this is because the bilinear form that we have endowed $\g_{[2]}$ with is of degree $-1$ (as opposed to $0$) in the second variable. For the latter, $\d_{[2]}$ would be the Lie algebra of divergence-free algebraic vector fields on the (smooth) affine $k$-scheme $\Spec A \cong \G_m^2$.
+            Because we know that the $\d_{[2]}$-module decomposes into submodules as:
+                $$\toroidal \cong \g_{[2]} \oplus \z_{[2]}$$
+            and that:
+                $$[\d_{[2]}, \d_{[2]}]_{\extendedtoroidal} \subseteq \d_{[2]} \oplus \z_{[2]}$$
+            the codomain of the cocycle $\sigma$ from corollary \ref{coro: yangian_extended_toroidal_lie_algebras_are_twisted_semi_direct_products} can be restricted down to $\z_{[2]}$, which has the advantage of being abelian, unlike $\toroidal$. Phrased differently, the semi-direct products:
+                $$\extendedtoroidal \cong \toroidal \rtimes^{\sigma} \d_{[2]}$$
+            actually arise from semi-direct products $\z_{[2]} \rtimes^{\sigma} \d_{[2]}$.  
         \end{remark}
         
+        \begin{remark}
+            We do not yet know whether or not $\extendedtoroidal$ is unique (up to isomorphisms) as a Lie algebra extension of $\d_{[2]}$ by $\toroidal$, as we do not know the $2$-cocycles:
+                $$\sigma: \bigwedge^2 \d_{[2]} \to \z_{[2]}$$
+            for which we have that:
+                $$\extendedtoroidal \cong \toroidal \rtimes^{\sigma} \d_{[2]}$$
+            but merely that such $2$-cocycles exist. 
+        \end{remark}
         \begin{remark}[Some explicit elements of $H^2_{\Lie}(\d_{[2]}, \z_{[2]})$] \label{remark: non_uniqueness_of_yangian_extended_lie_algebras}
             From proposition \ref{prop: lie_bracket_on_orthogonal_complement_of_toroidal_centre}, we know that:
                 $$[\d_{[2]}, \d_{[2]}]_{\extendedtoroidal} \subset \z_{[2]} \oplus \d_{[2]}$$
@@ -496,7 +648,7 @@
                 $$H^2_{\Lie}(\der_k(k[v_1^{\pm 1}, ..., v_n^{\pm 1}]), \bar{\Omega}^1_{k[v_1^{\pm 1}, ..., v_n^{\pm 1}]/k})$$
             contains at least $2$-cocyles that we shall denote by:
                 $$\sigma_1, \sigma_2$$
-            These \say{twist} the Lie brackets (in the sense of proposition \ref{prop: lie_brackets_on_extensions}):
+            These \say{twist} the Lie brackets (in the sense of proposition \ref{prop: twisted_semi_direct_product_criterion}):
                 $$[v_1^{m_1} ... v_n^{m_n} v_p \del_{v_p}, v_1^{r_1} ... v_n^{r_n} v_q \del_{v_q}] \in \der_k(k[v_1^{\pm 1}, ..., v_n^{\pm 1}])$$
             by the following formulae:
                 $$\sigma_1(v_1^{m_1} ... v_n^{m_n} v_p \del_{v_p}, v_1^{r_1} ... v_n^{r_n} v_q \del_{v_q}) = r_p m_q \sum_{1 \leq i \leq n} r_i v_1^{m_1 + r_1} ... v_n^{m_n + r_n} v_i^{-1} \bar{d}(v_i)$$
@@ -590,11 +742,11 @@
 
             Another way to see that:
                 $$\hat{\z}_{[2]} \subset \z_{[2]}$$
-            is to use the fact that $\extendedtoroidal$ is a Lie algebra extension of $\d_{[2]}$ by $\toroidal$ (cf. theorem \ref{theorem: extended_toroidal_lie_algebras}). This tells us that the centre of $\extendedtoroidal$ ought to lie inside that of $\toroidal$, i.e.:
+            is to use the fact that $\extendedtoroidal$ is a Lie algebra extension of $\d_{[2]}$ by $\toroidal$ (cf. theorem \ref{theorem: yangian_extended_toroidal_lie_algebras}). This tells us that the centre of $\extendedtoroidal$ ought to lie inside that of $\toroidal$, i.e.:
                 $$\hat{\z}_{[2]} \subset \z(\toroidal) = \z_{[2]}$$
-            as per proposition \ref{prop: lie_brackets_on_extensions}.
+            as per proposition \ref{prop: twisted_semi_direct_product_criterion}.
         \end{remark}
-        \begin{proposition}[Centres of extended toroidal Lie algebras] \label{prop: centres_of_extended_toroidal_lie_algebras}
+        \begin{proposition}[Centres of Yangian extended toroidal Lie algebras] \label{prop: centres_of_yangian_extended_toroidal_lie_algebras}
             The centre $\hat{\z}_{[2]}$ is a two-dimensional (abelian) Lie subalgebra of $\z_{[2]}$, spanned by $c_v$ and $c_t$. 
         \end{proposition}
             \begin{proof}
