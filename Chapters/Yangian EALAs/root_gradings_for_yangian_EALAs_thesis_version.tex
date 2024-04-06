@@ -1,6 +1,6 @@
 \section{A root grading for Yangian extended toroidal Lie algebra} \label{section: root_grading_for_yangian_EALAs}
     From now on, we will only be concerned with the Yangian extended toroidal Lie algebra:
-        $$\extendedtoroidal := \toroidal \rtimes \d_{[2]}$$
+        $$\extendedtoroidal := \toroidal \rtimes \divzero$$
     i.e. with the Yangian toroidal $2$-cocycle $\sigma = 0$. For an explanation of why we must make this assumption, see remark \ref{remark: why_yangian_toroidal_semi_direct_product}.
 
     As is now standard practice in infinite-dimensional Lie theory, infinite-dimensional Lie algebra induced from finite-dimensional simple Lie algebras ought to carry a grading by some kind of induced \say{higher root lattice} (e.g. affine Kac-Moody algebras are graded by the affinisations of the root lattices of the underlying finite-dimensional simple Lie algebras; cf. subsection \ref{subsection: a_fixed_untwisted_affine_kac_moody_algebra}). There are many reasons as to why one might seek to endow Lie algebras with such gradings, but one rather important reason is that without a root grading of some sort - which in turn would give rise to some kind of triangular decomposition - one would have no hope of setting up a theory of highest-weight modules which, from practical experiences with cases such as $\g$ and $\hat{\g}$, we know to be an extremely powerful method for attacking the problem of classifying say, simple modules over Lie algebras. Therfore, it is natural to ask the question of whether or not our Yangian extended toroidal Lie algebra $\extendedtoroidal$ can also be endowed with such an induced grading, primarily because $\extendedtoroidal$ carries a non-degenerate invariant symmetric bilinear form.
@@ -17,7 +17,7 @@
             $$(D_{\aff}, D_{\aff})_{\hat{\g}} = 0$$
         where $\hat{\g} := \uce(\g[v^{\pm 1}]) \oplus \bbC D_{\aff}$ is the enlarged vector space. Any Lie algebra structure on the vector space $\uce(\g[v^{\pm 1}]) \oplus \bbC D_{\aff}$, with respect to which the bilinear form constructed is invariant, can then be shown to satisfy the following properties:
         \begin{itemize}
-            \item The element $D_{\aff}$ can be shown to be the derivation on $\g[v^{\pm 1}]$ given by $\id_{\g} \tensor v \frac{d}{dv}$\footnote{Note that therefore $D_{\aff}$ is not the same as the element $D_v$ that will be introduced in convention \ref{conv: orthogonal_complement_of_toroidal_centres} (see also lemma \ref{lemma: derivation_action_on_multiloop_algebras} for a description of $D_v$ in terms of $\del_v$).}.
+            \item The element $D_{\aff}$ can be shown to be the derivation on $\g[v^{\pm 1}]$ given by $\id_{\g} \tensor v \frac{d}{dv}$\footnote{Note that therefore $D_{\aff}$ is not the same as the element $D_v$.}.
             \item It can also be shown that:
                 $$[D_{\aff}, c_v] = 0$$
         \end{itemize}
@@ -137,7 +137,7 @@
         \todo[inline]{Added explanation for why the extra simple root of $\hat{\g}$ is $-\theta + \delta$.}
 
     \subsection{Positive/negative Yangian extended toroidal Lie algebras}
-        Now, even though the \say{full} (Yangian extended) toroidal Lie algebras $\toroidal$ and $\extendedtoroidal$ are interesting in their own rights, they are somehow more related to the \say{Yangian double} associated to $\hat{\g}$ (cf. \cite[Subsection 2.3 and Section 6]{wendlandt_formal_shift_operators_on_yangian_doubles}), whereas our interest is towards the \say{Yangian} of $\hat{\g}$ (cf. section \ref{section: yangians_of_kac_moody_algebras}), which necessitates us concerning ourselves with certain Lie subalgebras of $\toroidal$ and $\extendedtoroidal$, to be thought of as the \say{positive half} with respect to the variable $t$ of these Lie algebras. 
+        Now, even though the \say{full} (Yangian extended) toroidal Lie algebras $\toroidal$ and $\extendedtoroidal$ are interesting in their own rights, they are somehow more related to the \say{Yangian double} associated to $\hat{\g}$ (cf. \cite[Subsection 2.3 and Section 6]{wendlandt_formal_shift_operators_on_yangian_doubles}), whereas our interest is towards the \say{Yangian} of $\hat{\g}$, which necessitates us concerning ourselves with certain Lie subalgebras of $\toroidal$ and $\extendedtoroidal$, to be thought of as the \say{positive half} with respect to the variable $t$ of these Lie algebras. 
 
         To start, let us set:
             $$A^{\positive} := \bbC[v^{\pm 1}, t], A^{\negative} := t^{-1} \bbC[v^{\pm t}, t^{-1}]$$
@@ -156,44 +156,44 @@
             $$\toroidal \cong \toroidal^{\positive} \oplus \toroidal^{\negative}$$
         
         Next, in order to split the Lie algebra:
-            $$\extendedtoroidal := \toroidal \rtimes \d_{[2]}$$
+            $$\extendedtoroidal := \toroidal \rtimes \divzero$$
         let us make the following constructions:
         \begin{itemize}
             \item
-                $$\d_{[2]}^{\positive} := ( \bigoplus_{(r, s) \in \Z \x \Z_{\leq 0} } \bbC D_{r, s} ) \oplus \bbC D_t$$
-                $$\d_{[2]}^{\negative} := ( \bigoplus_{(r, s) \in \Z \x \Z_{> 0} } \bbC D_{r, s} ) \oplus \bbC D_v$$
-            shall respectively be the \textit{vector subspaces}\footnote{Not yet Lie subalgebras!} of $\d_{[2]}$ which are graded-dual to $\z_{[2]}^{\positive/\negative}$ with respect to $(-, -)_{\extendedtoroidal}$;
+                $$\divzero^{\positive} := ( \bigoplus_{(r, s) \in \Z \x \Z_{\leq 0} } \bbC D_{r, s} ) \oplus \bbC D_t$$
+                $$\divzero^{\negative} := ( \bigoplus_{(r, s) \in \Z \x \Z_{> 0} } \bbC D_{r, s} ) \oplus \bbC D_v$$
+            shall respectively be the \textit{vector subspaces}\footnote{Not yet Lie subalgebras!} of $\divzero$ which are graded-dual to $\z_{[2]}^{\positive/\negative}$ with respect to $(-, -)_{\extendedtoroidal}$;
             \item
-                $$\extendedtoroidal^{\positive/\negative} := \toroidal^{\positive/\negative} \oplus \d_{[2]}^{\positive/\negative}$$
+                $$\extendedtoroidal^{\positive/\negative} := \toroidal^{\positive/\negative} \oplus \divzero^{\positive/\negative}$$
         \end{itemize}
 
-        \todo[inline]{Added explanation for the assumption that $\extendedtoroidal \cong \toroidal \rtimes \d_{[2]}$.}
-        \begin{remark}[Why must we work only with $\extendedtoroidal := \toroidal \rtimes \d_{[2]}$ ?] \label{remark: why_yangian_toroidal_semi_direct_product}
+        \todo[inline]{Added explanation for the assumption that $\extendedtoroidal \cong \toroidal \rtimes \divzero$.}
+        \begin{remark}[Why must we work only with $\extendedtoroidal := \toroidal \rtimes \divzero$ ?] \label{remark: why_yangian_toroidal_semi_direct_product}
             These constructions give rise to two orthogonally complementary Lie subalgebras of $\extendedtoroidal$ that we will make use of to establish a triangular decomposition for $\extendedtoroidal$ (cf. proposition \ref{prop: triangular_decomposition_of_extended_toroidal_lie_algebras}), provided that we make the assumption that:
-                $$\extendedtoroidal \cong \toroidal \rtimes \d_{[2]}$$
-            from now on. Our reasoning for making this assumption is that, without it, it is not clear (perhaps not even guaranteed) that given $D, D' \in \d_{[2]}^{\positive/\negative}$, we would then also have:
-                $$[D, D']_{\extendedtoroidal} \in \d_{[2]}^{\positive/\negative}$$
-            as we only know \textit{a priori} that $[D, D']_{\extendedtoroidal} \in \d_{[2]}^{\positive/\negative} \oplus \z_{[2]}$, not even whether or not it is true that $[D, D']_{\extendedtoroidal} \in \d_{[2]}^{\positive/\negative} \oplus \z_{[2]}^{\positive/\negative}$ (cf. remark \ref{remark: yangian_criterion_for_toroidal_cocycles}). In other words, without the assumption, it is not clear that $\d_{[2]}^{\positive/\negative}$ would be Lie subalgebras of $\d_{[2]}$, and consequently, whether or not the vector spaces $\extendedtoroidal^{\positive/\negative}$ would be Lie subalgebras of $\extendedtoroidal$ (as it is already known that the vector spaces $\toroidal^{\positive/\negative}$ are Lie subalgebras of $\toroidal$). Equivalently, we can think of the following: if $\sigma \not = 0$ is a Yangian toroidal $2$-cocycle and $\fraky(\sigma) := \toroidal \rtimes^{\sigma} \d_{[2]}$ is the corresponding extension, then per proposition \ref{prop: twisted_semi_direct_product_criterion}, we have that:
-                $$[D, D']_{\fraky(\sigma)} = [D, D']_{\d_{[2]}} + \sigma(D, D')$$
-            for all $D, D' \in \d_{[2]}$, but although we know that:
+                $$\extendedtoroidal \cong \toroidal \rtimes \divzero$$
+            from now on. Our reasoning for making this assumption is that, without it, it is not clear (perhaps not even guaranteed) that given $D, D' \in \divzero^{\positive/\negative}$, we would then also have:
+                $$[D, D']_{\extendedtoroidal} \in \divzero^{\positive/\negative}$$
+            as we only know \textit{a priori} that $[D, D']_{\extendedtoroidal} \in \divzero^{\positive/\negative} \oplus \z_{[2]}$, not even whether or not it is true that $[D, D']_{\extendedtoroidal} \in \divzero^{\positive/\negative} \oplus \z_{[2]}^{\positive/\negative}$ (cf. remark \ref{remark: yangian_criterion_for_toroidal_cocycles}). In other words, without the assumption, it is not clear that $\divzero^{\positive/\negative}$ would be Lie subalgebras of $\divzero$, and consequently, whether or not the vector spaces $\extendedtoroidal^{\positive/\negative}$ would be Lie subalgebras of $\extendedtoroidal$ (as it is already known that the vector spaces $\toroidal^{\positive/\negative}$ are Lie subalgebras of $\toroidal$). Equivalently, we can think of the following: if $\sigma \not = 0$ is a Yangian toroidal $2$-cocycle and $\fraky(\sigma) := \toroidal \rtimes^{\sigma} \divzero$ is the corresponding extension, then per proposition \ref{prop: twisted_semi_direct_product_criterion}, we have that:
+                $$[D, D']_{\fraky(\sigma)} = [D, D']_{\divzero} + \sigma(D, D')$$
+            for all $D, D' \in \divzero$, but although we know that:
                 $$\sigma(D, D') \in \z_{[2]}$$
-            necessarily (cf. corollary \ref{coro: 2_cocycles_are_central} and proposition \ref{prop: lie_bracket_on_orthogonal_complement_of_toroidal_centre}), it is still not clear what $\deg \sigma(D, D')$ is \textit{a priori}, and hence not clear whether $\sigma(\d_{[2]}^{\positive/\negative}, \d_{[2]}^{\positive/\negative}) \subseteq \d_{[2]}^{\positive/\negative}$.
+            necessarily (cf. corollary \ref{coro: 2_cocycles_are_central} and proposition \ref{prop: lie_bracket_on_orthogonal_complement_of_toroidal_centre}), it is still not clear what $\deg \sigma(D, D')$ is \textit{a priori}, and hence not clear whether $\sigma(\divzero^{\positive/\negative}, \divzero^{\positive/\negative}) \subseteq \divzero^{\positive/\negative}$.
             
-            If we do assume that $\extendedtoroidal \cong \toroidal \rtimes \d_{[2]}$, on the other hand, then through lemma \ref{lemma: positive/negative_yangian_extended_toroidal_lie_algebras}, we shall see that indeed, the vector spaces $\extendedtoroidal^{\positive/\negative}$ are closed under $[-, -]_{\extendedtoroidal}$ and hence are Lie subalgebras of $\extendedtoroidal$. 
+            If we do assume that $\extendedtoroidal \cong \toroidal \rtimes \divzero$, on the other hand, then through lemma \ref{lemma: positive/negative_yangian_extended_toroidal_lie_algebras}, we shall see that indeed, the vector spaces $\extendedtoroidal^{\positive/\negative}$ are closed under $[-, -]_{\extendedtoroidal}$ and hence are Lie subalgebras of $\extendedtoroidal$. 
         \end{remark}
         
         \begin{lemma}[Positive/negative Yangian extended toroidal Lie algebras] \label{lemma: positive/negative_yangian_extended_toroidal_lie_algebras}
             The vector spaces $\extendedtoroidal^{\positive/\negative}$ are Lie subalgebras of $\extendedtoroidal$ with respect to the Lie bracket $[-, -]_{\extendedtoroidal}$.
         \end{lemma}
             \begin{proof}
-                Given how $\d_{[2]}$ acts on $\g_{[2]}$ and on $\z_{[2]}$ (cf. lemmas \ref{lemma: derivation_action_on_multiloop_algebras} and \ref{lemma: derivation_action_on_toroidal_centres} respectively), which implies in particular that:
-                    $$[\d_{[2]}, \toroidal^{\positive/\negative}] \subseteq \toroidal^{\positive/\negative}$$
-                it shall suffice to only demonstrate that the vector spaces $\d_{[2]}^{\positive/\negative}$ are Lie subalgebras of $\d_{[2]}$ in order to show that $\extendedtoroidal^{\positive/\negative}$ are Lie subalgebras of $\extendedtoroidal$. To do this, it suffices to verify that:
-                    $$(r, s) \in \Z \x \Z_{\leq 0} \implies [D_{r, s}, D_t] \in \d_{[2]}^{\positive}$$
-                    $$(r, s) \in \Z \x \Z_{> 0} \implies [D_{r, s}, D_v] \in \d_{[2]}^{\negative}$$
+                Given how $\divzero$ acts on $\g_{[2]}$ and on $\z_{[2]}$ (cf. lemmas \ref{lemma: derivation_action_on_multiloop_algebras} and \ref{lemma: derivation_action_on_toroidal_centres} respectively), which implies in particular that:
+                    $$[\divzero, \toroidal^{\positive/\negative}] \subseteq \toroidal^{\positive/\negative}$$
+                it shall suffice to only demonstrate that the vector spaces $\divzero^{\positive/\negative}$ are Lie subalgebras of $\divzero$ in order to show that $\extendedtoroidal^{\positive/\negative}$ are Lie subalgebras of $\extendedtoroidal$. To do this, it suffices to verify that:
+                    $$(r, s) \in \Z \x \Z_{\leq 0} \implies [D_{r, s}, D_t] \in \divzero^{\positive}$$
+                    $$(r, s) \in \Z \x \Z_{> 0} \implies [D_{r, s}, D_v] \in \divzero^{\negative}$$
                 for which we rely on the assumption that:
-                    $$\extendedtoroidal \cong \toroidal \rtimes \d_{[2]}$$
-                This can be inferred from the explicit computations done in the proof of lemma \ref{lemma: explicit_commutators_between_basis_elements_of_toroidal_central_orthogonal_complement}.
+                    $$\extendedtoroidal \cong \toroidal \rtimes \divzero$$
+                This can be inferred from the explicit computations done in the proof of lemma \ref{lemma: commutators_of_yangian_div_zero_vector_fields}.
             \end{proof}
 
     \subsection{Root grading and triangular decomposition for Yangian extended toroidal Lie algebras}
@@ -240,14 +240,14 @@
                     $$\deg [x v^m t^p, y v^n t^q]_{\toroidal} = \deg [x, y]_{\g} v^{m + n} t^{p + q} = (\alpha + \beta, m + n)$$
                 Both cases together show that the constructed $Q \x \Z$-grading on $\toroidal$ is well-defined. 
                 
-                Secondly, note that from how commutators of elements of $\d_{[2]} := \bigoplus_{(r, s) \in \Z^2} \bbC D_{r, s} \oplus \bbC D_v \oplus \bbC D_t$ are given (cf. lemma \ref{lemma: explicit_commutators_between_basis_elements_of_toroidal_central_orthogonal_complement}), one sees that:
+                Secondly, note that from how commutators of elements of $\divzero := \bigoplus_{(r, s) \in \Z^2} \bbC D_{r, s} \oplus \bbC D_v \oplus \bbC D_t$ are given (cf. lemma \ref{lemma: commutators_of_yangian_div_zero_vector_fields}), one sees that:
                     $$\deg [D_v, D_t] = (0, 0) = \deg D_v + \deg D_t$$
                     $$\deg [D_v, D_{r, s}] = (0, -r) = \deg D_v + \deg D_{r, s}$$
                     $$\deg [D_t, D_{r, s}] = (0, -r) = \deg D_t + \deg D_{r, s}$$
                     $$\deg [D_{a, b}, D_{r, s}] = \deg D_{a + r, b + s + 1} = (0, -(a + r)) = \deg D_{a, b} + \deg D_{r, s}$$
-                Thus, the constructed grading is well-defined on $\d_{[2]}$. Recall also from proposition \ref{prop: lie_bracket_on_orthogonal_complement_of_toroidal_centre} that:
-                    $$[\d_{[2]}, \d_{[2]}]_{\extendedtoroidal} \subseteq \z_{[2]} \oplus \d_{[2]}$$
-                with the $\d_{[2]}$-summand being the usual commutator of derivations $[-, -]$ inherited from $\der_{k}(A)$, while the $\z_{[2]}$-summand is undetermined, but can be viewed as twist of $[-, -]$ by a cocycle $\sigma \in H^2_{\Lie}(\d_{[2]}, \z_{[2]})$ (cf. remark \ref{remark: yangian_criterion_for_toroidal_cocycles}). For this reason, we can and must choose the restriction of $[-, -]_{\extendedtoroidal}$ down to $\d_{[2]}$ to be the usual commutator $[-, -]$ for the construction of our $Q \x \Z$-grading. 
+                Thus, the constructed grading is well-defined on $\divzero$. Recall also from proposition \ref{prop: lie_bracket_on_orthogonal_complement_of_toroidal_centre} that:
+                    $$[\divzero, \divzero]_{\extendedtoroidal} \subseteq \z_{[2]} \oplus \divzero$$
+                with the $\divzero$-summand being the usual commutator of derivations $[-, -]$ inherited from $\der_{k}(A)$, while the $\z_{[2]}$-summand is undetermined, but can be viewed as twist of $[-, -]$ by a cocycle $\sigma \in H^2_{\Lie}(\divzero, \z_{[2]})$ (cf. remark \ref{remark: yangian_criterion_for_toroidal_cocycles}). For this reason, we can and must choose the restriction of $[-, -]_{\extendedtoroidal}$ down to $\divzero$ to be the usual commutator $[-, -]$ for the construction of our $Q \x \Z$-grading. 
             \end{proof}
 
         The following is a corollary to proposition \ref{prop: root_grading_on_extended_toroidal_lie_algebras}. One can see it to be true simply by looking at the degrees of elements of $\extendedtoroidal$. 
@@ -323,11 +323,11 @@
                 in the affine Kac-Moody case, where the summand of $2$ corressponds to the direct summand of the $1$-dimensional centre and the subspace spanned by the canonical degree derivation. From this, we infer that $\extendedtoroidal$ ought to admit two distinct weights:
                     $$\delta_v := (c_v, -)_{\extendedtoroidal}, \delta_t := (c_t, -)_{\extendedtoroidal}$$
                 i.e. they are dual to the central elements $c_v, c_t$ under the vector space isomorphism $\extendedtoroidal_0 \xrightarrow[]{\cong} \extendedtoroidal_0^*$ given by $H \mapsto (H, -)_{\extendedtoroidal}$. Note that because:
-                    $$(\d_{[2]}, \d_{[2]})_{\extendedtoroidal} = 0$$
-                per the construction of the bilinear form $(-, -)_{\extendedtoroidal}$ (cf. convention \ref{conv: orthogonal_complement_of_toroidal_centres}), we have that:
+                    $$(\divzero, \divzero)_{\extendedtoroidal} = 0$$
+                per the construction of the bilinear form $(-, -)_{\extendedtoroidal}$, we have that:
                     $$(\delta_v, \delta_v)_{\extendedtoroidal} = (\delta_t, \delta_t)_{\extendedtoroidal} = 0$$
 
-                Note also that, once again because $(\d_{[2]}, \d_{[2]})_{\extendedtoroidal} = 0$, we also have that:
+                Note also that, once again because $(\divzero, \divzero)_{\extendedtoroidal} = 0$, we also have that:
                     $$(\delta_v, \delta_t)_{\extendedtoroidal} = 0$$
             \end{enumerate}
         \end{remark}
