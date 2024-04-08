@@ -5,7 +5,6 @@
 
     As is now standard practice in infinite-dimensional Lie theory, infinite-dimensional Lie algebra induced from finite-dimensional simple Lie algebras ought to carry a grading by some kind of induced \say{higher root lattice} (e.g. affine Kac-Moody algebras are graded by the affinisations of the root lattices of the underlying finite-dimensional simple Lie algebras; cf. subsection \ref{subsection: a_fixed_untwisted_affine_kac_moody_algebra}). There are many reasons as to why one might seek to endow Lie algebras with such gradings, but one rather important reason is that without a root grading of some sort - which in turn would give rise to some kind of triangular decomposition - one would have no hope of setting up a theory of highest-weight modules which, from practical experiences with cases such as $\g$ and $\hat{\g}$, we know to be an extremely powerful method for attacking the problem of classifying say, simple modules over Lie algebras. Therfore, it is natural to ask the question of whether or not our Yangian extended toroidal Lie algebra $\extendedtoroidal$ can also be endowed with such an induced grading, primarily because $\extendedtoroidal$ carries a non-degenerate invariant symmetric bilinear form.
 
-    \todo[inline]{Untwisted affine Kac-Moody algebra materials have been moved here.}
     \subsection{Untwisted affine Kac-Moody algebras} \label{subsection: a_fixed_untwisted_affine_kac_moody_algebra}
         A construction that we will be making use of frequently is the untwisted affine Kac-Moody algebra associated to a finite-dimensional simple Lie algebra. Let us briefly recall how it is constructed. For details, we refer the reader to \cite[Chapters 6 and 7]{kac_infinite_dimensional_lie_algebras}.
 
@@ -133,8 +132,6 @@
         (cf. \cite[p. 7]{kac_infinite_dimensional_lie_algebras}) to act on the Chevalley-Serre generators by:
             $$\omega(x_i^{\pm}) = -x_i^{\mp}, \omega(h_i) = -h_i$$
         for all $i \in \hat{\simpleroots}$, which forces $h_0 = -\theta^{\vee} + c_v$ and consequently, forces the extra simple root to be $-\theta + \delta$.
-        
-        \todo[inline]{Added explanation for why the extra simple root of $\hat{\g}$ is $-\theta + \delta$.}
 
     \subsection{Positive/negative Yangian extended toroidal Lie algebras}
         Now, even though the \say{full} (Yangian extended) toroidal Lie algebras $\toroidal$ and $\extendedtoroidal$ are interesting in their own rights, they are somehow more related to the \say{Yangian double} associated to $\hat{\g}$ (cf. \cite[Subsection 2.3 and Section 6]{wendlandt_formal_shift_operators_on_yangian_doubles}), whereas our interest is towards the \say{Yangian} of $\hat{\g}$, which necessitates us concerning ourselves with certain Lie subalgebras of $\toroidal$ and $\extendedtoroidal$, to be thought of as the \say{positive half} with respect to the variable $t$ of these Lie algebras. 
@@ -167,7 +164,6 @@
                 $$\extendedtoroidal^{\positive/\negative} := \toroidal^{\positive/\negative} \oplus \divzero^{\positive/\negative}$$
         \end{itemize}
 
-        \todo[inline]{Added explanation for the assumption that $\extendedtoroidal \cong \toroidal \rtimes \divzero$.}
         \begin{remark}[Why must we work only with $\extendedtoroidal := \toroidal \rtimes \divzero$ ?] \label{remark: why_yangian_toroidal_semi_direct_product}
             These constructions give rise to two orthogonally complementary Lie subalgebras of $\extendedtoroidal$ that we will make use of to establish a triangular decomposition for $\extendedtoroidal$ (cf. proposition \ref{prop: triangular_decomposition_of_extended_toroidal_lie_algebras}), provided that we make the assumption that:
                 $$\extendedtoroidal \cong \toroidal \rtimes \divzero$$
@@ -268,7 +264,6 @@
             where, for each $\beta \in \hat{\Phi}$, we have written:
                 $$\extendedtoroidal^{\positive/\negative}_{\beta} := \extendedtoroidal^{\positive/\negative} \cap \extendedtoroidal_{\beta}$$
             Explicitly, the weight spaces are given as follows:
-            \todo[inline]{Fixed some typos in the descriptions of the $\hat{\g}$ weight spaces of $\extendedtoroidal^{\positive/\negative}$.}
                 $$
                     \forall (\alpha, m) \in \Phi \x \Z:
                     \begin{cases}
