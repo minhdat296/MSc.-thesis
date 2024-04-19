@@ -7,13 +7,13 @@
 \newcommand{\toroidal}{\t}
 \newcommand{\extendedtoroidal}{\hat{\t}}
 \newcommand{\simpleroots}{\mathbb{I}}
-\renewcommand{\positive}{+} 
+\renewcommand{\positive}{+}
 \renewcommand{\negative}{-}
 \newcommand{\divzero}{\der_{\gamma}(A)}
 
 \begin{document}
 
-    \title{Yangian extended toroidal Lie algebras}
+    \title{\texorpdfstring{$\gamma$}{}-extended toroidal Lie algebras}
     
     \author{Dat Minh Ha}
     \maketitle
@@ -23,6 +23,8 @@
       \dominitoc
       \tableofcontents %sort sections alphabetically
     }
+
+    \todo[inline]{Apparently there are no formatting guidelines against having mini tables of contents for each chapter, so I will keep those for ease of navigation.}
 
     \newpage
 
@@ -36,7 +38,9 @@
     
     \chapter{Kassel's characterisation of UCEs of current algebras}
         \begin{abstract}
-            The purpose of this chapter is to recall some relevant features of the theory of universal central extensions (UCEs) of so-called \say{perfect Lie algebras}, particularly Kassel's realisation of the centre of UCEs of the kind $\g \tensor_{\bbC} A$ for finite-dimensional simple Lie algebras $\g$ over $\bbC$, and a commutative $\bbC$-algebra $A$ (see theorem \ref{theorem: kassel_realisation}). We require this theory in order to be able to explicitly compute bases for the centres of $\uce(\g[v^{\pm 1}, t^{\pm 1}])$, which is necessary for the construction of \say{Yangian extended toroidal Lie algebras} in chapter \ref{chapter: yangian_EALAs}. Along the way, we will also recall some features of the structures of finite-dimensional simple Lie algebras, as well as some generalities about extensions of Lie algebras.
+            The purpose of this chapter is to recall some relevant features of the theory of universal central extensions (UCEs) of so-called \say{perfect Lie algebras}. Of special interest to us is Kassel's realisation of UCEs of Lie algebras of the kind $\g \tensor_{\bbC} A$, where $\g$ is a finite-dimensional simple Lie algebra over $\bbC$, and $A$ is a commutative $\bbC$-algebra (cf. theorem \ref{theorem: kassel_realisation}). Along the way, we will also recall some features of the structures of finite-dimensional simple Lie algebras, as well as some generalities about extensions of Lie algebras.
+            
+            We require this theory in order to be able to explicitly compute bases for the centre of the UCE of $\g[v^{\pm 1}, t^{\pm 1}]$, which is necessary for constructing of \say{$\gamma$-extended toroidal Lie algebras} in chapter \ref{chapter: yangian_EALAs}. 
         \end{abstract}
 
         \minitoc
@@ -49,9 +53,9 @@
 
     \newpage
 
-    \chapter{Yangian extended toroidal Lie algebras} \label{chapter: yangian_EALAs}
+    \chapter{\texorpdfstring{$\gamma$}{}-extended toroidal Lie algebras} \label{chapter: yangian_EALAs}
         \begin{abstract}
-            In this chapter, we attempt to construct \say{Yangian extended toroidal Lie algebras}, which are to be extensions $\extendedtoroidal$ of a certain Lie algebra of derivations by the toroidal Lie algebra $\toroidal := \uce(\g[v^{\pm 1}, t^{\pm 1}])$. This is to rectify the problem whereby any invariant symmetric bilinear form on $\toroidal$ is necessarily degenerate.
+            In this chapter, we attempt to construct \say{$\gamma$-extended toroidal Lie algebras}, which are to be extensions $\extendedtoroidal$ of a certain Lie algebra of derivations by the toroidal Lie algebra $\toroidal := \uce(\g[v^{\pm 1}, t^{\pm 1}])$. This is to rectify the problem whereby any invariant symmetric bilinear form on $\toroidal$ is necessarily degenerate.
         \end{abstract}
 
         \minitoc
@@ -60,15 +64,14 @@
 
         \input{Chapters/Yangian EALAs/construction_of_yangian_EALAs_thesis_version}
 
-        %the two sections below are not to be included yet, but compile with them each time to check for broken hyperlinks
-        %\input{Chapters/Yangian EALAs/examples_of_yangian_EALAs_thesis_version}
+        \input{Chapters/Yangian EALAs/structure_of_yangian_EALAs_thesis_version}
 
-        %\input{Chapters/Yangian EALAs/root_gradings_for_yangian_EALAs_thesis_version}
+        \input{Chapters/Yangian EALAs/examples_of_yangian_EALAs_thesis_version}
 
     \newpage
 
     \begin{appendices}
-        \chapter{Some technical appendices}
+        \chapter{Technical appendices}
             \input{Chapters/Appendices/appendix_lie_algebra_cohomology}
     \end{appendices}
 
