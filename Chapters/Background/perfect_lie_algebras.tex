@@ -74,7 +74,11 @@
             $$\mu := \sum_{i \in \simpleroots} m_i \alpha_i \in Q$$
         we define its \textbf{height} to be the sum of the coefficients:
             $$\height \mu := \sum_{i \in \simpleroots} m_i$$
-        $Q$ is therefore partially ordered by heights. 
+        $Q$ is therefore partially ordered by heights. Now, to return briefly to the notion of weight modules for $\g$, such a $\g$-module $V$ is said to be of \textbf{highest-weight} if and only if it has a weight $\lambda$ such that:
+            $$\g_{\alpha} \cdot V_{\lambda} = 0$$
+        for all \textit{positive} roots $\alpha \in \Phi^+$. Now, a remarkable feature of the theory of finite-dimensional simple Lie algebras is that finite-dimensional simple modules thereof all possess highest weights (cf. \cite[Theorem 21.1, p. 112]{humphreys_lie_algebras}). Since $\g$ is a simple Lie algebra, it possesses no non-zero (proper) Lie ideal, i.e. no non-zero proper submodules (via the adjoint action), and hence is a simple module over itself. Per the aforementioned fact, $\g$ therefore has a highest weight, which is the \textbf{highest root}, typically denoted by:
+            $$\theta$$
+        This is a maximal element of the partially ordered $\Z$-module $Q$.
         
         The \textbf{Cartan matrix} of $\g$ can then be defined to be:
             $$C := (c_{ij})_{i, j \in \simpleroots} := \left( \frac{2(\alpha_i, \alpha_j)_{\g}}{(\alpha_i, \alpha_i)_{\g}} \right)_{i, j \in \simpleroots}$$

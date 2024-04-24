@@ -1,7 +1,7 @@
 \input{thesis preambles}
 
-\setcounter{chapter}{-1}
-\setcounter{section}{-1}
+\setcounter{chapter}{0}
+\setcounter{section}{0}
 
 \input{commands}
 \newcommand{\toroidal}{\t}
@@ -13,26 +13,55 @@
 
 \begin{document}
 
-    \title{\texorpdfstring{$\gamma$}{}-extended toroidal Lie algebras}
+    \input{Frontmatter/title_page}
+
+    \newpage
+
+    \listoftodos
+
+    \todo[inline]{Remove to-do list before final compilation}
+
+    \newpage
+
+    \chapter*{Frontmatter}
+        \minitoc
     
-    \author{Dat Minh Ha}
-    \maketitle
+        \newpage
     
+        \input{Frontmatter/permission_to_use}
+    
+        \newpage
+    
+        \input{Frontmatter/abstract}
+    
+        \newpage
+    
+        \input{Frontmatter/acknowledgements}
+
+    \newpage
+
     {
       \hypersetup{} 
       \dominitoc
       \tableofcontents %sort sections alphabetically
     }
 
-    \todo[inline]{Apparently there are no formatting guidelines against having mini tables of contents for each chapter, so I will keep those for ease of navigation.}
-
     \newpage
 
-    \listoftodos
+    \chapter{Introduction}
+        \begin{abstract}
+            We begin this thesis by giving an account of the contexts and motivations that lead to our construction of $\gamma$-extended toroidal Lie algebras, as well as the structure of the whole thesis itself.
+        \end{abstract}
+    
+        \minitoc
 
-    \newpage
+        \newpage
 
-    \input{Chapters/introduction}
+        \input{Chapters/Introduction/contents}
+
+        \newpage
+
+        \input{Chapters/Introduction/structure}
 
     \newpage
     
@@ -44,12 +73,18 @@
         \end{abstract}
 
         \minitoc
+
+        \newpage
     
-       \input{Chapters/Background/perfect_lie_algebras}
-
-       \input{Chapters/Background/kassel_uce_centres}
-
-       \input{Chapters/Background/examples_of_kassel_uce_centre}
+        \input{Chapters/Background/perfect_lie_algebras}
+        
+        \newpage
+        
+        \input{Chapters/Background/kassel_uce_centres}
+        
+        \newpage
+        
+        \input{Chapters/Background/examples_of_kassel_uce_centre}
 
     \newpage
 
@@ -59,12 +94,20 @@
         \end{abstract}
 
         \minitoc
+
+        \newpage
     
         \input{Chapters/Yangian EALAs/setup_yangian_EALAs_thesis_version}
 
+        \newpage
+
         \input{Chapters/Yangian EALAs/construction_of_yangian_EALAs_thesis_version}
 
+        \newpage
+
         \input{Chapters/Yangian EALAs/structure_of_yangian_EALAs_thesis_version}
+
+        \newpage
 
         \input{Chapters/Yangian EALAs/examples_of_yangian_EALAs_thesis_version}
 

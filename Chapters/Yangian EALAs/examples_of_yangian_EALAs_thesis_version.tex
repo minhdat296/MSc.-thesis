@@ -435,8 +435,10 @@
             $$\tau_i([D, D']) = [D, \tau_i(D')]_{\extendedtoroidal} - [D', \tau_i(D)]_{\extendedtoroidal} - \sigma_i(D, D')$$
         we shall prove a stronger statement, namely the existence of $\tau_i \in C_1(\divzero, \z(\toroidal))$ that is \textit{graded} with respect to the $\Z^2$-gradings on $\divzero$ and $\z(\toroidal)$. We will do this by firstly assuming that such a graded $\tau_i$ exists, deriving an explicit closed-form formula for it, and then verifying whether or not $d_1^{\z(\toroidal)}(\tau_i) = \sigma_i$. Our final result, proposition \ref{prop: cohomological_non_triviality_of_billig_toroidal_cocycles} will as such be proven firstly through the use of proposition \ref{prop: cohomological_non_triviality_of_billig_toroidal_cocycles_explicit_formula} below.
 
+        \todo[inline]{Moved lemma about the gradedness of $\tau_i$ to the appendix about Lie algebra cohomology (see lemma \ref{lemma: graded_2_coboundaries}), as I would like to keep this subsection as concise as possible. I also realised after I sent the email at 23:31 that I might have a slight improvement of the existing proof, which has been included.}
+        
         \begin{remark}[Some recollection]
-            The proofs of proposition \ref{prop: cohomological_non_triviality_of_billig_toroidal_cocycles_explicit_formula} below - as well as of proposition \ref{prop: cohomological_non_triviality_of_billig_toroidal_cocycles} - are somewhat computation-heavy, so for the sake of visual clarity and convenience, let us recall for the proof the following facts that have been known since earlier in this chapter.
+            The proofs of propositions \ref{prop: cohomological_non_triviality_of_billig_toroidal_cocycles_explicit_formula} and \ref{prop: cohomological_non_triviality_of_billig_toroidal_cocycles} down below are somewhat computation-heavy, so for the sake of clarity and convenience, let us recall for the proof the following facts that have been known since earlier in this chapter.
             \begin{itemize}
                 \item Firstly, recall from remark \ref{remark: Z^2_grading_on_toroidal_centres} and corollary \ref{coro: yangian_div_zero_vector_fields_are_graded} that:
                     $$\deg D_{-a, -b - 1} = \deg K_{a, b} = (a, b)$$
@@ -461,7 +463,6 @@
                 \item Finally, we will need to know how $\sigma_1$ and $\sigma_2$ are given explicitly on the basis elements of $\divzero$. For this, we refer the reader to lemma \ref{lemma: billig_toroidal_cocycles_on_yangian_div_zero_vector_fields} at the top of this section.
             \end{itemize}
         \end{remark}
-
         \begin{proposition}[$\sigma_1$ is not $2$-coboundary] \label{prop: cohomological_non_triviality_of_billig_toroidal_cocycles_explicit_formula}
             Consider the two toroidal $2$-cocycles:
                 $$\sigma_1, \sigma_2 \in Z^2_{\Lie}(\divzero, \z(\toroidal))$$
@@ -476,17 +477,10 @@
                     $$\tau_2^{\kappa}(D_t) = \kappa K_{0, -1}$$
             \end{enumerate}
         \end{proposition}
-            \begin{proof} 
-                \todo[inline]{Added explanation for why $\tau_i$ is graded.}
-                To begin, we claim that should $\sigma_i$ be $2$-coboundary, i.e. there exists $\tau_i \in C_1(\divzero, \z(\toroidal))$ such that:
+            \begin{proof}
+                Let us suppose that $\sigma_i$ (for either $i = 1$ or $i = 2$, or perhaps even neither) is $2$-coboundary, say:
                     $$d_1^{\z(\toroidal)}(\tau_i) = \sigma_i$$
-                then either $\tau_i = 0$ or $\tau_i$ is necessarily $\Z^2$-graded as a linear map from $\divzero$ to $\z(\toroidal)$. Since:
-                    $$\sigma_i \not = 0$$
-                as a result of the computations done in lemma \ref{lemma: billig_toroidal_cocycles_on_yangian_div_zero_vector_fields}, we must eliminate the first possibility. To see then, why $\tau_i$ is graded, recall firstly from corollary \ref{coro: billig_toroidal_cocycles_are_graded} that $\sigma_i: \bigwedge^2 \divzero \to \z(\toroidal)$ is a $\Z^2$-graded linear map. Next, observe that the computations done in lemma \ref{lemma: explicit_commutators_between_central_basis_elements_and_derivations} imply that:
-                    $$[D, K]_{\extendedtoroidal} = \deg D + \deg K$$
-                for all $D \in \divzero$ and all $K \in \z(\toroidal)$. Because we are assuming that $\sigma_i$ is $2$-coboundary, it must satisfy the following equation for all $D, D' \in \divzero$:
-                    $$\tau_i([D, D']) = [D, \tau_i(D')]_{\extendedtoroidal} - [D', \tau_i(D)]_{\extendedtoroidal} - \sigma_i(D, D')$$
-                (cf. example \ref{example: low_degree_lie_coboundaries_with_non_trivial_coefficients}). The degree of each of the terms $D, \tau_i(D')]_{\extendedtoroidal}, [D', \tau_i(D)]_{\extendedtoroidal}, \sigma_i(D, D')$ is exactly $\deg D + \deg D'$, so the degrees of the LHS and RHS agree, namely being equal to $\deg D + \deg D'$. This is exactly as needed.
+                for some $\tau_i \in C_1(\divzero, \z(\toroidal))$. Recall firstly, from remark \ref{remark: Z^2_grading_on_toroidal_centres} and corollary \ref{coro: yangian_div_zero_vector_fields_are_graded}, respectively, that there are $\Z^2$-gradings on $\z(\toroidal)$ and $\divzero$. Secondly, recall from corollary \ref{coro: billig_toroidal_cocycles_are_graded} that $\sigma_i$ is graded with respect to these $\Z^2$-gradings. Thirdly, recall from lemma \ref{lemma: explicit_commutators_between_central_basis_elements_and_derivations} (cf. corollary \ref{coro: a_fixed_yangian_div_zero_vector_field_action}) that the $\divzero$ acts homogeneously on $\z(\toroidal)$. We can therefore apply lemma \ref{lemma: graded_2_coboundaries}, which tells us that we can assume without any loss of generality that $\tau_i$ is a graded linear map (with respect to the $\Z^2$-gradings on $\divzero$ and on $\z(\toroidal)$).
             
                 Assume thus that $\tau_i$ is graded. Firstly, this assumption would then imply that there are coefficients:
                     $$\lambda_{r, s}, \mu, \kappa \in \bbC$$
@@ -803,7 +797,12 @@
                                 \begin{aligned}
                                     & [D_{-r, -s - 2}, \tau_2^{\kappa}(D_{r, s})]_{\extendedtoroidal} - [D_{r, s}, \tau_2^{\kappa}(D_{-r, -s - 2})]_{\extendedtoroidal} - \sigma_2(D_{-r, -s - 2}, D_{r, s})
                                     \\
-                                    = & -r\left( \lambda_{r, s} + \lambda_{-r, -s - 2} + N_2(r, s, -r, -s - 2) \right) c_v - \left( \lambda_{r, s} (s + 2) + \lambda_{-r, -s - 2} s + N_2(r, s, -r, -s - 2) (s + 1) \right) c_t
+                                    = &
+                                    \begin{aligned}
+                                        & -r\left( \lambda_{r, s} + \lambda_{-r, -s - 2} + N_2(r, s, -r, -s - 2) \right) c_v
+                                        \\
+                                        - & \left( \lambda_{r, s} (s + 2) + \lambda_{-r, -s - 2} s + N_2(r, s, -r, -s - 2) (s + 1) \right) c_t
+                                    \end{aligned}
                                     \\
                                     = &
                                     \begin{aligned}
