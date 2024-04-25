@@ -1,4 +1,4 @@
-\section{Lie algebra cohomology}
+\section{Lie algebra cohomology} \label{section: lie_algebra_cohomology_appendix}
     \subsection{A brief account of the generalities}
         Let us work over a fixed field $k$.
     
@@ -176,7 +176,7 @@
             (cf. \cite[Equation 1.6, p. 421]{kassel_quantum_groups}). In other words, $2$-coboundaries are error terms measuring how far a linear map $\d \to \Omega$ is from being a derivation of $\d$ with values in $\Omega$.
         \end{example}
 
-        Finally, let us investigate a particular property enjoyed by graded Lie $2$-coboundaries, namely that they admit \say{lifts} along the coboundary map $d_1$ which are \textit{graded} linear maps. This is a technical preparation in service of the proof of proposition \ref{prop: cohomological_non_triviality_of_billig_toroidal_cocycles_explicit_formula}.
+        Finally, let us investigate a particular property enjoyed by graded Lie $2$-coboundaries, namely that they admit \say{lifts} along the coboundary map $d_1$ which are \textit{graded} linear maps. This is a technical preparation in service of the proof of proposition \ref{prop: sigma_1_is_not_coboundary}.
         \begin{remark}[Graded vector spaces and graded linear maps] \label{remark: grading_projections}
             For what follows, recall that if $V := \bigoplus_{n \in Z} V_n, W := \bigoplus_{n \in Z} W_n$ are vector spaces graded by some abelian group $Z$, and:
                 $$\phi: V \to W$$
@@ -196,8 +196,9 @@
                     \end{tikzcd}
                 $$
             Clearly, if $\phi$ was graded to begin with, then $\bar{\phi} = \phi$.
+
+            We caution the reader that even though $\bar{\phi}$ is given as a potentially infinite direct sum of maps, any evaluation $\bar{\phi}(v)$ at any vector $v \in V$ is actually just a finite sum of elements of $V$. This is because elements of $V := \bigoplus_{n \in Z} V_n$ are of the form $(v_n)_{n \in Z}$, with $v_n = 0$ for all but finitely many $n \in Z$.
         \end{remark}
-        \todo[inline]{Re-proved graded coboundary lemma.}
         \begin{lemma}[Graded Lie $2$-coboundaries] \label{lemma: graded_2_coboundaries}
             Let $Z$ be an abelian group. Let $\d := \bigoplus_{n \in Z} \d_n$ be a $Z$-graded Lie algebra and $\Omega := \bigoplus_{n \in Z} \Omega_n$ be a $\d$-module, that is $Z$-graded as a vector space. Suppose also that the $\d$-action on $\Omega$ is homogeneous, i.e.:
                 $$D \cdot \Omega_n \subseteq \Omega_{n + \deg D}$$
@@ -243,11 +244,18 @@
                             \\
                             = & \bigoplus_{(m, n) \in Z^{\oplus 2} } d_1^{\Omega}(\tau)_{m + n}(D, D')
                             \\
+                            = & \bigoplus_{(m, n) \in Z^{\oplus 2} } \left( D \cdot \tau_m(D') - D' \cdot \tau_n(D) - \tau_{m + n}([D, D']) \right)
+                            \\
+                            = & \bigoplus_{m \in Z} D \cdot \tau_m(D') - \bigoplus_{n \in Z} D' \cdot \tau_n(D) - \bigoplus_{(m, n) \in Z^{\oplus 2} } \tau_{m + n}([D, D'])
+                            \\
                             = & D \cdot \bigoplus_{m \in Z} \tau_m(D') - D' \cdot \bigoplus_{n \in Z} \tau_n(D) - \bigoplus_{(m, n) \in Z^{\oplus 2} } \tau_{m + n}([D, D'])
                             \\
                             = & D \cdot \bar{\tau}(D') - D' \cdot \bar{\tau}(D) - \bar{\tau}([D, D'])
                         \end{aligned}
                     $$
+                in which, to go from the third equality to the fourth one, we have made use of the assumption that, because $D, D' \in \d$ are homogeneous elements and because the $\d$-action on $\Omega$ is homogeneous, we have as a result that:
+                    $$\bigoplus_{m \in Z} D \cdot \tau_m(D') = D \cdot \sum_{m \in Z} \tau_m(D') = D \cdot \bigoplus_{m \in Z} \tau_m(D')$$
+                    $$\bigoplus_{n \in Z} D' \cdot \tau_n(D) = D' \cdot \sum_{n \in Z} \tau_n(D) = D' \cdot \bigoplus_{n \in Z} \tau_m(D)$$
                 Now, since $d_1^{\Omega}(\tau) \in C_2(\d, \Omega)$ has been assumed to be graded to begin with, we have that:
                     $$\overline{d_1^{\Omega}(\tau)} = d_1^{\Omega}(\tau)$$
                 and hence:
