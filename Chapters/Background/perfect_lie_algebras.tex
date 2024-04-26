@@ -229,8 +229,8 @@
             $$0 \to \t \to \frake \to \d \to 0$$
         then the aforementioned $2$-cocycles shall serve to measure the difference between $[D, D']_{\frake}$ and $[D, D']_{\d}$, for $D, D' \in \d$. One small technical assumption that we must make in order to be able to even make this comparison in the first place, is that $\t$ must be a $\d$-module of a certain sort (cf. proposition \ref{prop: twisted_semi_direct_product_criterion}).
 
-        Before writing down a definition of such \say{twists} of semi-direct products, let us firstly check that this is indeed possible. Our goal is to demonstrate that the Lie bracket on a given semi-direct product, say $\t \rtimes \d$, can be \say{twisted} by Lie $2$-cocycles of $\d$ with values in the $\d$-module $\z(\t) \subseteq \t$, i.e. elements $\sigma \in Z^2_{\Lie}(\d, \z(\t))$ (cf. definition \ref{def: lie_cocycles_and_coboundaries}). We remark that when $\t$ is abelian, the following lemma coincides with theorem \ref{theorem: H^2_of_lie_algebras_and_abelian_extensions}, but in this thesis, we will be interested in non-abelian extensions (see, for instance, theorem \ref{theorem: yangian_extended_toroidal_lie_algebras_main_theorem}).
-        \begin{lemma}[Well-definiteness of twisted semi-direct products] \label{lemma: twisted_semi_direct_products_well_definiteness}
+        Before writing down a definition of such \say{twists} of semi-direct products, let us firstly check that this is indeed possible. 
+        \begin{lemma}[Constructing twisted semi-direct products] \label{lemma: twisted_semi_direct_products_well_definiteness}
             Let $\t, \d$ be Lie algebras, and consider their semi-direct product:
                 $$0 \to \t \to \t \rtimes \d \xrightarrow[]{\pi} \d \to 0$$
             as in example \ref{example: lie_algebra_semi_direct_products}; let us denote the Lie bracket on $\t \rtimes \d$ by $[-, -]_0$ and the $\d$-action on $\t$ via Lie derivations by $\rho: \d \to \der(\t)$. Fix also a linear map:
@@ -248,7 +248,7 @@
                         \begin{aligned}
                             & \sigma( D, [D', D''] ) + \sigma( D', [D'', D] ) + \sigma( D'', [D, D'] )
                             \\
-                            = & \rho(D)( [D'', D'] ) + \rho(D')( [D, D''] ) + \rho(D'')( [D', D] )
+                            = & \rho(D) \cdot \sigma(D'', D') + \rho(D') \cdot \sigma(D, D'') + \rho(D'') \cdot \sigma(D', D)
                         \end{aligned}
                     $$
             \end{itemize}
@@ -266,21 +266,14 @@
                     $$
                 which in turn implies that:
                     \begin{equation} \label{equation: 2_cocycle_in_terms_of_section}
-                        \sigma(D, D') = [\gamma(D), \gamma(D)]_{\sigma} - \gamma([D, D'])
+                        \sigma(D, D') = [\gamma(D), \gamma(D')]_{\sigma} - \gamma([D, D'])
                     \end{equation}
             
                 To prove the \say{if} direction, suppose that $[-, -]_{\sigma}$ is a Lie bracket on the vector space $\t \oplus \d$. By the definition of Lie algebras, this means that $[-, -]_{\sigma}$ is skew-symmetric and satisfies the Jacobi identity, i.e.:
                     \begin{equation} \label{equation: twisted_semi_direct_product_jacobi_identity}
-                        0 =
-                        \begin{aligned}
-                            & [ X + D, [Y + D', Z + D'']_{\sigma} ]_{\sigma}
-                            \\
-                            + & [ Y + D', [Z + D'', X + D]_{\sigma} ]_{\sigma}
-                            \\
-                            + & [ Z + D'', [X + D, Y + D']_{\sigma} ]_{\sigma}
-                        \end{aligned}
+                        0 = [ X + D, [Y + D', Z + D'']_{\sigma} ]_{\sigma} + [ Y + D', [Z + D'', X + D]_{\sigma} ]_{\sigma} + [ Z + D'', [X + D, Y + D']_{\sigma} ]_{\sigma}
                     \end{equation}
-                for all $K, K', K'' \in \t$ and $D, D', D'' \in \d$. By using the construction of $\sigma$, as well as the fact that $[-, -]_0$ is a Lie bracket - and hence is skew-symmetric and satisfies the Jacobi identity - and equation \eqref{equation: 2_cocycle_in_terms_of_section}, we shall get the desired identity. To see that the codomain of $\sigma$ is $\z(\t)$, note that by taking:
+                for all $K, K', K'' \in \t$ and $D, D', D'' \in \d$. To see that the codomain of $\sigma$ is $\z(\t)$, note that by taking:
                     $$K = K' = D'' = 0$$
                 in equation \eqref{equation: twisted_semi_direct_product_jacobi_identity}, the equation shall reduce to:
                     $$0 = [[\gamma(D), \gamma(D')]_0 + \sigma(D, D'), K'']_{\sigma} + [[K'', \gamma(D)]_0, \gamma(D')]_{\sigma} + [[\gamma(D'), K'']_0, \gamma(D)]_{\sigma}$$
@@ -300,7 +293,55 @@
                     $$[\sigma(D, D'), K'']_{\sigma} = 0$$
                 thus shows that:
                     $$\sigma(D, D') \in \z(\t)$$
-                for all $D, D' \in \d$.
+                for all $D, D' \in \d$. Then, by using the construction of $\sigma$, as well as the fact that $[-, -]_0$ is a Lie bracket - and hence is skew-symmetric and satisfies the Jacobi identity - and equation \eqref{equation: 2_cocycle_in_terms_of_section}, we shall get the desired identity:
+                    $$
+                        \begin{aligned}
+                            & 0
+                            \\
+                            = &
+                                [ X + D, [Y + D', Z + D'']_{\sigma} ]_{\sigma}
+                                \\
+                                & \qquad + [ Y + D', [Z + D'', X + D]_{\sigma} ]_{\sigma}
+                                \\
+                                & \qquad + [ Z + D'', [X + D, Y + D']_{\sigma} ]_{\sigma}
+                            \\
+                            = &
+                                [ X + D, [Y + D', Z + D'']_0 + \sigma(D', D'') ]_{\sigma}
+                                \\
+                                & \qquad + [ Y + D', [Z + D'', X + D]_0 + \sigma(D'', D) ]_{\sigma}
+                                \\
+                                & \qquad + [ Z + D'', [X + D, Y + D']_0 + \sigma(D, D') ]_{\sigma}
+                            \\
+                            = & 
+                                [ X + D, [Y + D', Z + D'']_0 ]_{\sigma} + [D, \sigma(D', D'')]_{\sigma}
+                                \\
+                                & \qquad + [ Y + D', [Z + D'', X + D]_0 ]_{\sigma} + [D', \sigma(D'', D)]_{\sigma}
+                                \\
+                                & \qquad + [ Z + D'', [X + D, Y + D']_0 ]_{\sigma} + [D'', \sigma(D, D')]_{\sigma}
+                            \\
+                            = &
+                                [ X + D, [Y + D', Z + D'']_0 ]_0 + \sigma(D, [D', D'']) + [D, \sigma(D', D'')]_{\sigma}
+                                \\
+                                & \qquad + [ Y + D', [Z + D'', X + D]_0 ]_0 + \sigma(D', [D'', D]) + [D', \sigma(D'', D)]_{\sigma}
+                                \\
+                                & \qquad + [ Z + D'', [X + D, Y + D']_0 ]_0 + \sigma(D'', [D, D']) + [D'', \sigma(D, D')]_{\sigma}
+                            \\
+                            = &
+                                \sigma(D, [D', D'']) + \rho(D) \cdot \sigma(D', D'')
+                                \\
+                                & \qquad + \sigma(D', [D'', D]) + \rho(D') \cdot \sigma(D'', D)
+                                \\
+                                & \qquad + \sigma(D'', [D, D']) + \rho(D'') \cdot \sigma(D, D')
+                        \end{aligned}
+                    $$
+                wherein the third equality holds because the codomain of $\sigma$ is $\z(\t)$, the fifth equality holds because $[-, -]_0$ satisfies the Jacobi identity and because $[D, X]_{\sigma} = \rho(D)(X)$ for all $D \in \d$ and all $X \in \t$ (cf. example \ref{example: lie_algebra_semi_direct_products}). Rearranging then yields the sought-for identity:
+                    $$
+                        \begin{aligned}
+                            & \sigma( D, [D', D''] ) + \sigma( D', [D'', D] ) + \sigma( D'', [D, D'] )
+                            \\
+                            = & \rho(D) \cdot \sigma(D'', D') + \rho(D') \cdot \sigma(D, D'') + \rho(D'') \cdot \sigma(D', D)
+                        \end{aligned}
+                    $$
 
                 Conversely, suppose that the three conditions are satisfied. Using equation \eqref{equation: 2_cocycle_in_terms_of_section}, we shall get that:
                     $$
@@ -308,21 +349,49 @@
                             & \sigma( D, [D', D''] ) + \sigma( D', [D'', D] ) + \sigma( D'', [D, D'] )
                             \\
                             = &
-                            \begin{aligned}
-                                & \left( [ \gamma(D), \gamma([D', D'']) ]_{\sigma} - \gamma( [D, [D', D'']] )) \right)
+                                \left( [ \gamma(D), \gamma([D', D'']) ]_{\sigma} - \gamma( [D, [D', D'']] )) \right)
                                 \\
-                                + & \left( [ \gamma(D'), \gamma([D'', D]) ]_{\sigma} - \gamma( [D', [D'', D]] )) \right)
+                                & \qquad + \left( [ \gamma(D'), \gamma([D'', D]) ]_{\sigma} - \gamma( [D', [D'', D]] )) \right)
                                 \\
-                                + & \left( [ \gamma(D''), \gamma([D, D']) ]_{\sigma} - \gamma( [D'', [D, D']] )) \right)
-                            \end{aligned}
+                                & \qquad + \left( [ \gamma(D''), \gamma([D, D']) ]_{\sigma} - \gamma( [D'', [D, D']] )) \right)
                             \\
-                            = & [ \gamma(D), \gamma([D', D'']) ]_{\sigma} + [ \gamma(D'), \gamma([D'', D]) ]_{\sigma} + [ \gamma(D''), \gamma([D, D']) ]_{\sigma}
+                            = &
+                                [ \gamma(D), \gamma([D', D'']) ]_{\sigma} 
+                                \\
+                                & \qquad + [ \gamma(D'), \gamma([D'', D]) ]_{\sigma}
+                                \\
+                                & \qquad + [ \gamma(D''), \gamma([D, D']) ]_{\sigma}
                             \\
-                            = & \rho(D)( [D'', D'] ) + \rho(D')( [D, D''] ) + \rho(D'')( [D', D] )
+                            = &
+                                [ \gamma(D), [\gamma(D'), \gamma(D'')]_{\sigma} - \sigma(D', D'') ]_{\sigma}
+                                \\
+                                & \qquad + [ \gamma(D'), [\gamma(D''), \gamma(D)]_{\sigma} - \sigma(D'', D) ]_{\sigma}
+                                \\
+                                & \qquad + [ \gamma(D''), [\gamma(D), \gamma(D')]_{\sigma} - \sigma(D, D') ]_{\sigma}
+                            \\
+                            = &
+                                [ \gamma(D), [\gamma(D'), \gamma(D'')]_{\sigma} ]_{\sigma} - \rho(D) \cdot \sigma(D', D'')
+                                \\
+                                & \qquad + [ \gamma(D'), [\gamma(D''), \gamma(D)]_{\sigma} ]_{\sigma} - \rho(D') \cdot \sigma(D'', D)
+                                \\
+                                & \qquad + [ \gamma(D''), [\gamma(D), \gamma(D')]_{\sigma} ]_{\sigma} - \rho(D'') \cdot \sigma(D, D')
                         \end{aligned}
                     $$
-                where the second equality comes from the fact that $\d$ is a Lie algebra and hence $[-, -]$ satisfies the Jacobi identity, and the third equality can be seen to be true via example \ref{example: lie_algebra_semi_direct_products}. We are therefore done.
+                where the second equality comes from the fact that $\d$ is a Lie algebra and hence $[-, -]$ satisfies the Jacobi identity, and the fourth equality can be seen to be true via example \ref{example: lie_algebra_semi_direct_products}. Because weare now assuming that:
+                    $$
+                        \begin{aligned}
+                            & \sigma( D, [D', D''] ) + \sigma( D', [D'', D] ) + \sigma( D'', [D, D'] )
+                            \\
+                            = & \rho(D) \cdot \sigma(D'', D') + \rho(D') \cdot \sigma(D, D'') + \rho(D'') \cdot \sigma(D', D)
+                        \end{aligned}
+                    $$
+                we can get through some straightforward rearranging that we must have:
+                    $$[ \gamma(D), [\gamma(D'), \gamma(D'')]_{\sigma} ]_{\sigma} + [ \gamma(D'), [\gamma(D''), \gamma(D)]_{\sigma} ]_{\sigma} + [ \gamma(D''), [\gamma(D), \gamma(D')]_{\sigma} ]_{\sigma} ] = 0$$
+                In conjunction with how the bracket $[-, -]_0$ is given (cf. example \ref{example: lie_algebra_semi_direct_products}) and how because this is a Lie bracket, it must satisfy the Jacobi identity, we thus see that $[-, -]_{\sigma}$ must therefore satisfy the Jacobi identity, and hence is a Lie bracket on $\t \oplus \gamma(\d)$.
             \end{proof}
+        \begin{remark}[Twisted semi-direct products and Lie $2$-cocycles]
+            We see now - from lemma \ref{lemma: twisted_semi_direct_products_well_definiteness} - that the Lie bracket on a given semi-direct product, say $\t \rtimes \d$, can be \say{twisted} by Lie $2$-cocycles of $\d$ with values in the $\d$-module $\z(\t) \subseteq \t$, i.e. elements $\sigma \in Z^2_{\Lie}(\d, \z(\t))$ (cf. definition \ref{def: lie_cocycles_and_coboundaries}), defined with respect to the standard Chevalley-Eilenberg resolution for $\z(\t)$ (cf. definition \ref{def: lie_algebra_cohomology}). We remark also that when $\t$ is abelian, the assertions made in lemma \ref{lemma: twisted_semi_direct_products_well_definiteness} amount to the same contents as in theorem \ref{theorem: H^2_of_lie_algebras_and_abelian_extensions}, but in this thesis, we will be interested in non-abelian extensions, such as in theorem \ref{theorem: yangian_extended_toroidal_lie_algebras_main_theorem}.
+        \end{remark}
         \begin{definition}[Twisted semi-direct products] \label{def: twisted_semi_direct_products} 
             Let $\t, \d$ be Lie algebras and let $\t$ be a module over $\d$ via an action by Lie derivations $\rho: \d \to \der(\t)$, so that we may form the semi-direct product $\t \rtimes \d$ as in example \ref{example: lie_algebra_semi_direct_products}. Let us also implicitly fix a linear section $\d \to \t \rtimes \d$ of the canonical projection $\t \rtimes \d \to \d$.
 
