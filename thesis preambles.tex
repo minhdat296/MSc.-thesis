@@ -56,6 +56,7 @@
 
 \usepackage[backend=biber, style=alphabetic, sorting=nty]{biblatex}
     \addbibresource{bibliography.bib}
+\renewbibmacro{in:}{}
 
 \raggedbottom
 
@@ -118,8 +119,8 @@
 \let\endchangemargin=\endlist 
 
 %   Generate the environment for the abstract:
-\newcommand\summaryname{Abstract}
-\newenvironment{abstract}%
+\newcommand\summaryname{Summary}
+\newenvironment{summary}%
     {\small\begin{center}%
     \bfseries{\summaryname} \end{center}}
 

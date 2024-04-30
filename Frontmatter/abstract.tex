@@ -1,2 +1,14 @@
 \section*{Abstract}
-    The purpose of this thesis is to construct so-called $\gamma$-extended toroidal Lie algebras, which can be understood as a two-variable analogue of untwisted affine Kac-Moody algebras. Ostensibly, these $\gamma$-extended toroidal Lie algebras were were created as a mean of endowing toroidal Lie algebras with Lie bialgebra structures, so that toroidal Lie bialgebras can be recognised as classical limits of so-called \say{affine Yangians} in a certain sense. This necessitates endowing $\gamma$-extended Lie algebras with \textit{non-degenerated} and \textit{invariant} symmetric bilinear forms, a prominent feature of these Lie algebras that will play a crucial role in the constructions carried out in this thesis.
+    The purpose of this thesis is to construct so-called $\gamma$-extended toroidal Lie algebras. Originally, these $\gamma$-extended toroidal Lie algebras, i.e. universal central extensions (UCEs):
+        $$\toroidal$$
+    of Lie algebras of the form:
+        $$\g[v^{\pm 1}, t^{\pm 1}] := \g \tensor_{\bbC} \bbC[v^{\pm 1}, t^{\pm 1}]$$
+    where $\g$ is a finite-dimensional simple Lie algebra over $\bbC$, were created as a mean of endowing toroidal Lie algebras with Lie bialgebra structures, so that toroidal Lie bialgebras can be recognised as classical limits of so-called \say{affine Yangians} in a certain sense. Per \cite{etingof_kazhdan_quantisation_1}, this would mean construct Manin triples of the form:
+        $$(\toroidal, \toroidal^{\positive}, \toroidal^{\negative})$$
+    which in itself, requires us to endow $\toroidal$ with an invariant bilinear form satisfying some conditions. However, an issue is that any invariant bilinear form on a UCE is necessarily \textit{degenerate}. As such, we are motivated to enlarge toroidal Lie algebras into $\gamma$-extended Lie algebras:
+        $$\extendedtoroidal$$
+    and this is done in such a way that the resulting larger Lie algebras can then be endowed with \textit{invariant} symmetric bilinear forms that are also \textit{non-degenerate}; importantly, the construction of these bilinear form depends entirely on a certain linear map:
+        $$\gamma: \bbC[v^{\pm 1}, t^{\pm 1}] \to \bbC$$
+    (and hence the name of our Lie algebras).
+    
+    We shall see that the Lie algebras $\extendedtoroidal$ all arise as \say{twists} of the semi-direct product $\toroidal \rtimes \der_{\gamma}(\bbC[v^{\pm 1}, t^{\pm 1}])$ by Lie $2$-cocycles $\sigma \in Z^2_{\Lie}(\der_{\gamma}(\bbC[v^{\pm 1}, t^{\pm 1}]), \z(\toroidal))$, with $\der_{\gamma}(\bbC[v^{\pm 1}, t^{\pm 1}])$ being a certain ($\Z^2$-graded) Lie subalgebra of the Lie algebra $\der(\bbC[v^{\pm 1}, t^{\pm 1}])$ of all derivations on $\bbC[v^{\pm 1}, t^{\pm 1}]$. Moreover, we will see that there is a readily available example of such a $2$-cocycle giving rise to a $\gamma$-extended toroidal Lie algebra that is \textit{not} isomorphic to the aforementioned semi-direct product.
