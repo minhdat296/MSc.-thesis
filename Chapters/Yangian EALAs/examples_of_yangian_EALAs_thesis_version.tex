@@ -23,7 +23,7 @@
             \end{equation}
         where $x, y \in \{v, t\}$ are symbolic placeholders.
         
-        As a quick aside, let us note that the first cocycle $\sigma_1$ was known as far back as \cite{moody_rao_yokonuma_vertex_representations_of_toroidal_lie_algebras}, but we are not aware of the history of $\sigma_2$ beyond its appearance in first \cite{billig_energy_momentum_tensor}.
+        As a quick aside, let us note that the first cocycle $\sigma_1$ was known as far back as \cite{moody_rao_n_toroidal_vertex_representations}, but we are not aware of the history of $\sigma_2$ beyond its appearance in first \cite{billig_energy_momentum_tensor}.
 
         \begin{remark}
             Before we state the main theorem of this section, let us remind the reader of a few relevant notions from Lie algebra cohomology, and for more details, we refer the reader to appendix \ref{section: lie_algebra_cohomology_appendix}.
@@ -789,8 +789,10 @@
                     and hence the LHS and RHS of equation \eqref{equation: coboundary_verification_tau_2} are indeed equal when $D = D_v$ and $D' = D_{r, s}$.
                     \item The same method as above can be used to show that the LHS and RHS of equation \eqref{equation: coboundary_verification_tau_2} are indeed equal when $D = D_t$ and $D' = D_{r, s}$.
                     \item Finally, let us verify that the LHS and RHS of equation \eqref{equation: coboundary_verification_tau_2} are indeed equal when $D = D_v$ and $D' = D_t$. Since:
-                        $$[D_v, D_t] = 0$$
-                    the LHS vanishes. Recall also from lemma \ref{lemma: billig_toroidal_cocycles_on_yangian_div_zero_vector_fields} that:
+                        $$[D_v, D_t] = -D_{0, 1}$$
+                    the LHS of said equation will vanish:
+                        $$\tau_2^{\kappa}([D_v, D_t]) = -\tau_2^{\kappa}(D_{0, 1}) = 0$$
+                    Recall also from lemma \ref{lemma: billig_toroidal_cocycles_on_yangian_div_zero_vector_fields} that:
                         $$\sigma_2(D_v, D_t) = 0$$
                     and therefore it suffices to check if it is true that:
                         $$[D_v, \tau_2^{\kappa}(D_t)]_{\extendedtoroidal} - [D_t, \tau_2^{\kappa}(D_v)]_{\extendedtoroidal} = 0$$
